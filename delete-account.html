@@ -28,12 +28,12 @@
         
         <div id="loading-state">
             <h1 class="text-2xl font-bold text-gray-900 mb-4">Loading...</h1>
-            <p class="text-gray-600">Checking authentication status.</p>
+            <p class="text-gray-600">Verifying your session...</p>
         </div>
 
-        <div id="login-state" class="hidden">
-            <h1 class="text-2xl font-bold text-gray-900 mb-4">Account Deletion Required</h1>
-            <p class="text-gray-600 mb-6">To delete your account, you must be logged into the app. Please open the app, sign in, and then return to this page.</p>
+        <div id="error-state" class="hidden">
+            <h1 class="text-2xl font-bold text-red-600 mb-4">Authentication Invalid</h1>
+            <p class="text-gray-600 mb-6">Your session is invalid or has expired. Please return to the app and try again.</p>
         </div>
 
         <div id="main-state" class="hidden">
@@ -64,82 +64,101 @@
         const EDGE_FUNCTION_NAME = 'delete-account';
         // -----------------
 
-        const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
         const loadingState = document.getElementById('loading-state');
-        const loginState = document.getElementById('login-state');
+        const errorState = document.getElementById('error-state');
         const mainState = document.getElementById('main-state');
         const userEmailEl = document.getElementById('user-email');
         const deleteButton = document.getElementById('delete-button');
         const messageEl = document.getElementById('message');
 
-        let session = null;
+        if (SUPABASE_URL === 'YOUR_SUPABASE_URL' || SUPABASE_ANON_KEY === 'YOUR_SUPABASE_ANON_KEY') {
+            loadingState.innerHTML = `
+                <h1 class="text-2xl font-bold text-red-600 mb-4">Configuration Error</h1>
+                <p class="text-gray-600 text-left">Please update the <code>SUPABASE_URL</code> and <code>SUPABASE_ANON_KEY</code> variables in this HTML file with your project's credentials from your Supabase project settings.</p>
+            `;
+        } else {
+            const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            let session = null;
 
-        async function handleAuthChange(event, sessionData) {
-            session = sessionData;
-            loadingState.classList.add('hidden');
+            // --- NEW LOGIC ---
+            // This function runs on page load to process the tokens from the URL
+            const handleTokenHandoff = async () => {
+                const hash = window.location.hash.substring(1);
+                const params = new URLSearchParams(hash);
+                
+                const accessToken = params.get('access_token');
+                const refreshToken = params.get('refresh_token');
 
-            if (!session || !session.user) {
-                mainState.classList.add('hidden');
-                loginState.classList.remove('hidden');
-            } else {
-                loginState.classList.add('hidden');
-                mainState.classList.remove('hidden');
-                userEmailEl.textContent = session.user.email;
-            }
-        }
-        
-        // Listen for auth changes
-        supabase.auth.onAuthStateChange(handleAuthChange);
-
-        // Check initial session
-        supabase.auth.getSession().then(({ data }) => {
-            if (!session) { // Only run if onAuthStateChange hasn't already fired
-                 handleAuthChange('INITIAL_SESSION', data.session);
-            }
-        });
-
-
-        deleteButton.addEventListener('click', async () => {
-            if (!confirm('Are you absolutely sure you want to delete your account? This cannot be undone.')) {
-                return;
-            }
-
-            if (!session) {
-                messageEl.textContent = 'Error: You are not authenticated.';
-                messageEl.className = 'mt-4 text-sm text-red-600';
-                return;
-            }
-
-            deleteButton.disabled = true;
-            deleteButton.textContent = 'Deleting...';
-            messageEl.textContent = '';
-
-            try {
-                const { error } = await supabase.functions.invoke(EDGE_FUNCTION_NAME, {
-                    headers: {
-                        'Authorization': `Bearer ${session.access_token}`,
-                    }
-                });
-
-                if (error) {
-                    throw error;
+                if (!accessToken || !refreshToken) {
+                    loadingState.classList.add('hidden');
+                    errorState.classList.remove('hidden');
+                    return;
                 }
 
-                messageEl.textContent = 'Your account has been successfully deleted.';
-                messageEl.className = 'mt-4 text-sm text-green-600';
-                deleteButton.textContent = 'Account Deleted';
-                // Also sign the user out of the current session
-                await supabase.auth.signOut();
+                // Use the tokens to set the session in the browser
+                const { data, error } = await supabase.auth.setSession({
+                    access_token: accessToken,
+                    refresh_token: refreshToken,
+                });
 
-            } catch (err) {
-                console.error('Error invoking delete function:', err);
-                messageEl.textContent = `Error: ${err.message || 'Could not delete account.'}`;
-                messageEl.className = 'mt-4 text-sm text-red-600';
-                deleteButton.disabled = false;
-                deleteButton.textContent = 'Delete My Account Permanently';
-            }
-        });
+                if (error || !data.session) {
+                    console.error("Failed to set session:", error);
+                    loadingState.classList.add('hidden');
+                    errorState.classList.remove('hidden');
+                    return;
+                }
+                
+                // Session is now set, update UI
+                session = data.session;
+                loadingState.classList.add('hidden');
+                mainState.classList.remove('hidden');
+                userEmailEl.textContent = session.user.email;
+            };
+
+            // Run the handoff function when the page loads
+            handleTokenHandoff();
+
+            deleteButton.addEventListener('click', async () => {
+                if (!confirm('Are you absolutely sure you want to delete your account? This cannot be undone.')) {
+                    return;
+                }
+
+                if (!session) {
+                    messageEl.textContent = 'Error: You are not authenticated.';
+                    messageEl.className = 'mt-4 text-sm text-red-600';
+                    return;
+                }
+
+                deleteButton.disabled = true;
+                deleteButton.textContent = 'Deleting...';
+                messageEl.textContent = '';
+
+                try {
+                    const { error } = await supabase.functions.invoke(EDGE_FUNCTION_NAME, {
+                        headers: {
+                            'Authorization': `Bearer ${session.access_token}`,
+                        }
+                    });
+
+                    if (error) {
+                        throw error;
+                    }
+
+                    messageEl.textContent = 'Your account has been successfully deleted. You can now close this page.';
+                    messageEl.className = 'mt-4 text-sm text-green-600';
+                    deleteButton.textContent = 'Account Deleted';
+                    mainState.innerHTML = `<h1 class="text-2xl font-bold text-green-600 mb-4">Success</h1><p>${messageEl.textContent}</p>`;
+
+                } catch (err) {
+                    console.error('Error invoking delete function:', err);
+                    messageEl.textContent = `Error: ${err.message || 'Could not delete account. Please try again.'}`;
+                    messageEl.className = 'mt-4 text-sm text-red-600';
+                    deleteButton.disabled = false;
+                    deleteButton.textContent = 'Delete My Account Permanently';
+                }
+            });
+        }
     </script>
 </body>
 </html>
+
