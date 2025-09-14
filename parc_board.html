@@ -1,79 +1,95 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parc at the Gateway - Community Updates</title>
-    
-    <!-- Tailwind CSS for styling -->
+    <title>The Parc Condominium Board</title>
+    <!-- Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts for a clean, readable font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
     <style>
-        /* Use the Inter font family */
+        /* Using the Inter font family */
         body {
             font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-200 antialiased">
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 
-    <!-- Main container -->
-    <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8">
-        
-        <header class="w-full max-w-6xl mx-auto text-center mb-8">
-            <!-- Logo (URL) -->
-            <img src="https://img1.wsimg.com/isteam/ip/cb787039-4d6a-4b27-b23a-e6f8e95de85a/blob-7c410ab.png" alt="Parc Gateway Logo" class="h-24 mx-auto mb-4">
-            <h1 class="text-4xl md:text-5xl font-bold text-white">Community Bulletin</h1>
-        </header>
+    <!-- Header Section -->
+    <header class="bg-teal-800 text-white shadow-lg p-6 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <img src="https://img1.wsimg.com/isteam/ip/cb787039-4d6a-4b27-b23a-e6f8e95de85a/blob-7c410ab.png" alt="Parc Logo" class="h-16 md:h-20">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Parc at the Gateway</h1>
+                <p class="text-lg md:text-xl text-teal-200">Community Notice Board</p>
+            </div>
+        </div>
+        <div class="bg-white p-2 rounded-lg shadow-md">
+            <img src="https://img1.wsimg.com/isteam/ip/cb787039-4d6a-4b27-b23a-e6f8e95de85a/parcfront.jpg" alt="The Parc Condominium Entrance" class="w-24 h-24 md:w-32 md:h-32 object-cover">
+        </div>
+    </header>
 
-        <main class="w-full max-w-6xl mx-auto">
-            <!-- Building Photo (URL) -->
-            <div class="mb-12 flex justify-center">
-                <img src="https://img1.wsimg.com/isteam/ip/cb787039-4d6a-4b27-b23a-e6f8e95de85a/parcfront.jpg" alt="Front of Parc at the Gateway" class="rounded-lg shadow-2xl w-full max-w-md h-auto">
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto p-6 md:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+
+            <!-- Primary Message: Internet Outage -->
+            <div class="lg:col-span-3 bg-red-600 text-white rounded-2xl shadow-xl p-8 transform transition-transform hover:scale-105">
+                <h2 class="text-3xl font-bold mb-4 border-b-4 border-red-400 pb-2">IMPORTANT: Planned Internet Outage</h2>
+                <p class="text-xl">
+                    Please be advised that there will be a building-wide internet outage next week to allow for critical system upgrades. We apologize for any inconvenience this may cause and appreciate your understanding.
+                </p>
+                <p class="text-lg mt-4 font-semibold">Please check your email for the specific date and time for your unit.</p>
             </div>
 
-            <!-- Three Column Layout -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Column 1: The Parc Way -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold text-teal-300 mb-4">The Parc Way</h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        Please take the time to welcome new neighbors as you see them in the public areas of our building. Don't hesitate to show them the Parc hospitality.
-                    </p>
-                </div>
-
-                <!-- Column 2: Community Outreach -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold text-teal-300 mb-4">Planned Internet Outage</h2>
-                    <ul class="list-disc list-inside text-gray-300 space-y-3 leading-relaxed">
-                        <li>FirstDigital will be performing a network equipment upgrade on Friday, September 26th, between 12:00 AM and 6:00 AM. During this time, you can expect an internet outage of up to 2 hours. This maintenance will improve network performance.</li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Community Action -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold text-teal-300 mb-4">Community Action</h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        Please keep our package room clean and organized. Make it a habit to collect those wonderful packages as soon as possible so your neighbors can do the same. Thank you in advance for your help with this ongoing challenge.
-                    </p>
-                </div>
-
+            <!-- Secondary Message: Mobile FOBs -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 transform transition-transform hover:scale-105">
+                <h2 class="text-2xl font-bold text-teal-800 mb-3">Unlock Doors with Your Phone!</h2>
+                <p class="text-lg">
+                    You can now use your mobile device as a secure key FOB for building entry. It's convenient and easy to set up.
+                </p>
+                <p class="mt-4 text-lg font-semibold">Contact PMSI for details on how to get started.</p>
             </div>
-        </main>
 
-        <footer class="w-full max-w-6xl mx-auto text-center mt-12">
-            <p class="text-gray-500 text-sm">This page will automatically refresh with new updates.</p>
-        </footer>
+            <!-- Tertiary Message: Gateway Events -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 transform transition-transform hover:scale-105 lg:col-span-2">
+                <h2 class="text-2xl font-bold text-teal-800 mb-3">What's Happening at The Gateway?</h2>
+                <p class="text-lg">
+                    Don't forget to check out the exciting events happening right next door! From concerts and markets to art installations and dining, there's always something new to explore at The Gateway.
+                </p>
+                <p class="mt-4 text-lg font-semibold">Visit their website for a full calendar of events!</p>
+            </div>
 
-    </div>
+        </div>
+    </main>
 
+    <!-- Footer Section -->
+    <footer class="bg-teal-800 text-white text-center p-4 mt-8">
+        <p class="font-medium text-lg">
+            <span id="current-date"></span> &bull; Have a wonderful day!
+        </p>
+    </footer>
+
+    <script>
+        // JavaScript to display the current date dynamically
+        function updateDate() {
+            const dateElement = document.getElementById('current-date');
+            if (dateElement) {
+                const today = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                dateElement.textContent = today.toLocaleDateString('en-US', options);
+            }
+        }
+        // Call the function on page load
+        updateDate();
+    </script>
+    
     <script>
         // This script will automatically refresh the page every 24 hours.
         // 24 hours = 86,400,000 milliseconds
@@ -89,3 +105,4 @@
 
 </body>
 </html>
+
