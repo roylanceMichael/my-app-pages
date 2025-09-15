@@ -50,11 +50,19 @@
 
             <!-- Secondary Message: Mobile FOBs -->
             <div class="bg-white rounded-2xl shadow-lg p-8 transform transition-transform hover:scale-105">
-                <h2 class="text-2xl font-bold text-teal-800 mb-3">Unlock Doors with Your Phone!</h2>
-                <p class="text-lg">
-                    You can now use your mobile device as a secure key FOB for building entry. It's convenient and easy to set up.
-                </p>
-                <p class="mt-4 text-lg font-semibold">Contact PMSI for details on how to get started.</p>
+                 <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="flex-grow">
+                        <h2 class="text-2xl font-bold text-teal-800 mb-3">Unlock Doors with Your Phone!</h2>
+                        <p class="text-lg">
+                           You can now use your mobile device as a secure key FOB for building entry.
+                        </p>
+                        <p class="mt-4 text-lg font-semibold">Scan the QR code to sign in to the resident portal and submit a maintenance request to get enrolled.</p>
+                    </div>
+                    <div class="text-center flex-shrink-0">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://pmsystems.appfolio.com/connect/users/sign_in" alt="QR Code for Resident Portal" class="rounded-lg shadow-md">
+                        <p class="text-sm mt-2 text-gray-600">Scan to Sign In</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Tertiary Message: Gateway Events -->
@@ -99,9 +107,9 @@
     </script>
     
     <script>
-        // This script will automatically refresh the page every 2 hours.
-        // 2 hours = 86,400,000 milliseconds
-        const REFRESH_INTERVAL = 2 * 60 * 60 * 1000;
+        // This script will automatically refresh the page every 24 hours.
+        // 24 hours = 86,400,000 milliseconds
+        const REFRESH_INTERVAL = 24 * 60 * 60 * 1000;
 
         setInterval(function() {
             console.log("Refreshing page for new content...");
@@ -113,5 +121,4 @@
 
 </body>
 </html>
-
 
