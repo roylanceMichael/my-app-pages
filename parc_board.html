@@ -43,7 +43,7 @@
             <div class="lg:col-span-3 bg-red-600 text-white rounded-2xl shadow-xl p-8 transform transition-transform hover:scale-105">
                 <h2 class="text-3xl font-bold mb-4 border-b-4 border-red-400 pb-2">IMPORTANT: Planned Internet Outage</h2>
                 <p class="text-xl">
-                    FirstDigital will be performing a network equipment upgrade on Friday, September 26th, between 12:00 AM and 6:00 AM. During this time, you can expect an internet outage of up to 2 hours. 
+                    FirstDigital will be performing a network equipment upgrade on Friday, September 26th, between 12:00 AM and 6:00 AM. During this time, you can expect an internet outage of up to 2 hours.
                 </p>
                 <p class="text-lg mt-4 font-semibold">This maintenance will improve network performance.</p>
             </div>
@@ -59,11 +59,19 @@
 
             <!-- Tertiary Message: Gateway Events -->
             <div class="bg-white rounded-2xl shadow-lg p-8 transform transition-transform hover:scale-105 lg:col-span-2">
-                <h2 class="text-2xl font-bold text-teal-800 mb-3">What's Happening at The Gateway?</h2>
-                <p class="text-lg">
-                    Don't forget to check out the exciting events happening right next door! From concerts and markets to art installations and dining, there's always something new to explore at The Gateway.
-                </p>
-                <p class="mt-4 text-lg font-semibold">Visit their website for a full calendar of events!</p>
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="flex-grow">
+                        <h2 class="text-2xl font-bold text-teal-800 mb-3">What's Happening at The Gateway?</h2>
+                        <p class="text-lg">
+                            Don't forget to check out the exciting events happening right next door! From concerts and markets to art installations and dining, there's always something new to explore at The Gateway.
+                        </p>
+                        <p class="mt-4 text-lg font-semibold">Scan the QR code for a full calendar of events!</p>
+                    </div>
+                    <div class="text-center flex-shrink-0">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://atthegateway.com/calendar/" alt="QR Code for Gateway Events Calendar" class="rounded-lg shadow-md">
+                        <p class="text-sm mt-2 text-gray-600">Scan Me</p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -105,4 +113,5 @@
 
 </body>
 </html>
+
 
