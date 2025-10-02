@@ -101,17 +101,41 @@
     </footer>
 
     <script>
-        // JavaScript to display the current date dynamically
+        // JavaScript to display the current date and keep it updated efficiently for Mountain Time
         function updateDate() {
             const dateElement = document.getElementById('current-date');
             if (dateElement) {
                 const today = new Date();
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                dateElement.textContent = today.toLocaleDateString('en-US', options);
+                // These options force the date to be formatted for the Mountain Time zone (MST/MDT)
+                const options = { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    timeZone: 'America/Denver' 
+                };
+                dateElement.textContent = new Intl.DateTimeFormat('en-US', options).format(today);
             }
         }
-        // Call the function on page load
+
+        // 1. Run the function immediately on page load to set the initial date
         updateDate();
+
+        // 2. Schedule the next update to run precisely at midnight based on the device's clock
+        (function scheduleMidnightUpdate() {
+            const now = new Date();
+            // Set a date object for the start of the next day (tomorrow at 00:00:00)
+            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            // Calculate the time difference in milliseconds
+            const msUntilMidnight = tomorrow - now;
+
+            // Set a timeout that will trigger only when the day changes
+            setTimeout(function() {
+                updateDate(); // Update the date display
+                // After this first midnight update, simply set it to run again every 24 hours
+                setInterval(updateDate, 24 * 60 * 60 * 1000);
+            }, msUntilMidnight);
+        })();
     </script>
     
     <script>
