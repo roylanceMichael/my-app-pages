@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Parc Condominium Board</title>
+    <!-- Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean, readable font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -23,6 +25,7 @@
 </head>
 <body class="bg-gray-800 text-gray-100 flex flex-col min-h-screen">
 
+    <!-- Header Section -->
     <header class="bg-gray-900 text-white shadow-lg p-6">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-4">
@@ -38,57 +41,73 @@
         </div>
     </header>
 
+    <!-- Main Content Area -->
     <main class="flex-grow container mx-auto p-6 md:p-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
 
+            <!-- Primary Message: Insurance Update (Using Indigo Theme) -->
             <div class="lg:col-span-3 bg-indigo-800 text-white rounded-2xl shadow-xl p-8 transform transition-transform hover:scale-105">
-                <h2 class="text-3xl font-bold mb-4 border-b-4 border-indigo-600 pb-2">Annual Home Owners Association Meeting Announcement</h2>
-                <div class="flex flex-col md:flex-row items-center mt-4">
-                    <div class="md:w-3/4 md:pr-6">
-                        <p class="text-2xl font-bold mb-3">
-                            Date: Thursday, December 4th, 2025
+                <h2 class="text-3xl font-bold mb-4 border-b-4 border-indigo-500 pb-2">IMPORTANT NOTICE: Insurance Deductible Change</h2>
+                <div class="flex flex-col md:flex-row gap-6 mt-4">
+                    <div class="flex-grow">
+                        <p class="text-xl mb-4 leading-relaxed">
+                            Effective <strong>October 1, 2025</strong>, the HOA Master Policy deductible for property damage has increased to <strong>$100,000</strong>.
                         </p>
-                        <p class="text-2xl font-bold mb-3">
-                            Time: 4:00 PM
-                        </p>
-                        <p class="text-2xl font-bold mb-4">
-                            Location: 5th Floor Clubhouse
-                        </p>
-                        <p class="text-xl">
-                            Join us to review the annual budget, discuss the successful 2025 audit, and cover important topics like monthly dues and internet costs. There are also two board member positions open for election this year. Your voice matters!
+                        <p class="text-lg mb-4 text-indigo-100 leading-relaxed">
+                            Unit owners are now personally responsible for this amount for any loss affecting their unit. It is critical that you contact your personal insurance agent immediately.
                         </p>
                     </div>
-                    <div class="md:w-1/4 flex flex-col items-center mt-6 md:mt-0">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://pmsystems.appfolio.com/connect/online_work_orders/new" alt="QR Code for Work Order Portal" class="rounded-lg bg-white p-2 shadow-lg">
-                        <p class="text-center font-bold mt-2">Scan for Work Order</p>
+                    <!-- Action Checklist Box (Darker Indigo) -->
+                    <div class="bg-indigo-900 p-6 rounded-xl border border-indigo-600 md:w-1/3 shadow-inner">
+                        <h3 class="text-xl font-bold mb-3 text-indigo-200 uppercase tracking-wide">Action Required</h3>
+                        <p class="mb-3 font-medium text-gray-100">Update your HO-6 Policy to include:</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-2">
+                                <svg class="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-indigo-50"><strong>$100,000</strong> Dwelling Coverage (Coverage A)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-indigo-50"><strong>$10,000</strong> Loss Assessment Coverage</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
+            <!-- New Section: HOA Ombudsman Update (Left Side) -->
+            <div class="lg:col-span-2 bg-gray-700 text-gray-200 rounded-2xl shadow-xl p-8 transform transition-transform hover:scale-105">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl font-bold text-white mb-3">New Utah HOA Ombudsman Office</h2>
+                    <div class="flex-grow space-y-4">
+                        <p class="text-lg">
+                            The Department of Commerce has established a new <strong>Office of the Homeowners' Association Ombudsman</strong>. This neutral office helps owners and boards understand state laws and provides advisory opinions to resolve disputes before legal action.
+                        </p>
+                        <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <h3 class="font-bold text-white mb-1">New State Registry Requirement</h3>
+                            <p class="text-gray-300">
+                                A new mandatory registry replaces the old system (shutting down 10/31/25). <br>
+                                <span class="text-indigo-300 font-semibold">Good news: PMSI will handle all registration compliance and fees automatically for our community.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Message: Mobile FOBs (Right Side) -->
             <div class="bg-gray-700 text-gray-200 rounded-2xl shadow-xl p-8 transform transition-transform hover:scale-105">
                  <div class="flex flex-col h-full">
                     <h2 class="text-2xl font-bold text-white mb-3">Unlock Doors with Your Phone!</h2>
                     <div class="flex-grow">
-                        <p class="text-lg">
-                           You can now use your mobile device as a secure key FOB for building entry. Scan the QR code and submit a maintenance request to get enrolled.
+                        <p class="text-lg mb-4">
+                           You can now use your mobile device as a secure key FOB for building entry.
                         </p>
+                        <p class="text-lg font-semibold text-indigo-200">Scan to sign in & enroll:</p>
                     </div>
                     <div class="text-center mt-4">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=128x128&data=https://pmsystems.appfolio.com/connect/online_work_orders/new" alt="QR Code for Resident Portal" class="rounded-lg shadow-md inline-block">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="lg:col-span-2 bg-gray-700 text-gray-200 rounded-2xl shadow-xl p-8 transform transition-transform hover:scale-105">
-                <div class="flex flex-col h-full">
-                    <h2 class="text-2xl font-bold text-white mb-3">Important Notice Regarding DirecTV Service</h2>
-                    <div class="flex-grow">
-                        <p class="text-lg">
-                           A reminder that as of February 15th, 2024, the community bulk rate for DirecTV service was discontinued. If your service has been interrupted, it is because you are no longer being billed through the HOA.
-                        </p>
-                        <p class="mt-4 text-lg font-semibold">
-                            To reactivate your service under a personal account, please call DirecTV customer care directly at <span class="font-bold text-white">866-258-8766</span>.
-                        </p>
+                        <div class="inline-block bg-white p-2 rounded-lg shadow-md">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://pmsystems.appfolio.com/connect/users/sign_in" alt="QR Code for Resident Portal" class="w-32 h-32">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,12 +115,14 @@
         </div>
     </main>
 
+    <!-- Footer Section -->
     <footer class="bg-gray-900 text-white text-center p-4 mt-8">
         <p class="font-medium text-lg">
             <span id="current-date"></span> &bull; Have a wonderful day!
         </p>
     </footer>
 
+    <!-- Script A: Smart Midnight Update from your uploaded file -->
     <script>
         // JavaScript to display the current date and keep it updated efficiently for Mountain Time
         function updateDate() {
@@ -140,6 +161,7 @@
         })();
     </script>
     
+    <!-- Script B: 24-Hour Page Refresh -->
     <script>
         // This script will automatically refresh the page every 24 hours.
         // 24 hours = 86,400,000 milliseconds
