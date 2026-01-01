@@ -84,7 +84,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 2: Official Business (Moved to 2nd) -->
+        <!-- SLIDE 2: Official Business -->
         <div id="slide-2" class="slide-container">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 h-full grid-rows-[auto_1fr]">
                 
@@ -144,7 +144,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 3: Community Marketplace (Moved to 3rd) -->
+        <!-- SLIDE 3: Community Marketplace -->
         <div id="slide-3" class="slide-container">
             <div class="h-full flex flex-col justify-center items-center">
                 <div class="bg-teal-800 text-white rounded-xl shadow-xl p-8 max-w-5xl w-full transform transition-transform hover:scale-105 border border-teal-600">
@@ -228,12 +228,32 @@
 
                 events.forEach(event => {
                     const card = document.createElement('div');
-                    card.className = 'bg-gray-700 rounded-xl p-5 shadow-lg border-l-4 border-pink-500 flex flex-col hover:bg-gray-600 transition-colors';
+                    // New Card Styling: Remove internal padding for wrapper, overflow hidden for image
+                    card.className = 'bg-gray-700 rounded-xl overflow-hidden shadow-lg border-l-4 border-pink-500 flex flex-col hover:bg-gray-600 transition-colors h-full';
                     
+                    let imageHtml = '';
+                    if (event.image) {
+                        imageHtml = `
+                        <div class="h-40 w-full relative bg-gray-800">
+                             <img src="${event.image}" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+                        </div>
+                        `;
+                    } else {
+                        // Fallback pattern if no image
+                        imageHtml = `
+                        <div class="h-24 w-full bg-gradient-to-r from-gray-700 to-gray-600 relative">
+                             <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+                        </div>
+                        `;
+                    }
+
                     card.innerHTML = `
-                        <h3 class="text-xl font-bold text-white mb-1 line-clamp-1">${event.title}</h3>
-                        <p class="text-pink-300 font-semibold text-sm mb-2">${event.date}</p>
-                        <p class="text-gray-300 text-base leading-snug line-clamp-3">${event.description}</p>
+                        ${imageHtml}
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h3 class="text-lg font-bold text-white mb-1 line-clamp-1">${event.title}</h3>
+                            <p class="text-pink-300 font-semibold text-xs mb-2 uppercase tracking-wide">${event.date}</p>
+                            <p class="text-gray-300 text-sm leading-snug line-clamp-2">${event.description}</p>
+                        </div>
                     `;
                     grid.appendChild(card);
                 });
