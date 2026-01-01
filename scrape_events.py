@@ -80,10 +80,12 @@ def scrape_calendar():
         
         if img_tag:
             # Try to get the specific 'src' or sometimes lazy loaded 'data-src'
-            if img_tag.get("src"):
-                image_src = img_tag.get("src")
-            elif img_tag.get("data-src"):
-                image_src = img_tag.get("data-src")
+            # We prefer the raw source to ensure we can scale it down ourselves in CSS without pixelation
+            raw_src = img_tag.get("src") or img_tag.get("data-src") or ""
+            
+            # Clean the URL to ensure we get the full size (remove query params like ?resize=...)
+            if raw_src:
+                image_src = raw_src.split('?')[0]
 
         events_data.append({
             "title": title,
