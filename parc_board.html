@@ -19,7 +19,7 @@
             -moz-osx-font-smoothing: grayscale;
         }
         .hover\:scale-105:hover {
-            transform: scale(1.02); /* Reduced scale to prevent layout shift */
+            transform: scale(1.02);
         }
         
         /* Slide Styling */
@@ -32,7 +32,7 @@
             transition: opacity 1s ease-in-out;
             opacity: 0;
             pointer-events: none; 
-            padding: 1rem; /* Reduced padding (p-4) */
+            padding: 1rem;
         }
 
         .slide-active {
@@ -44,7 +44,7 @@
 </head>
 <body class="bg-gray-800 text-gray-100 flex flex-col h-screen overflow-hidden">
 
-    <!-- Header Section (Compacted) -->
+    <!-- Header Section -->
     <header class="bg-gray-900 text-white shadow-lg p-4 z-20 flex-shrink-0">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -63,8 +63,29 @@
     <!-- Main Content Area -->
     <main class="flex-grow container mx-auto relative w-full h-full">
         
-        <!-- SLIDE 1: Official Business -->
+        <!-- SLIDE 1: Gateway Events (NEW) -->
         <div id="slide-1" class="slide-container slide-active">
+            <div class="h-full flex flex-col">
+                <div class="flex justify-between items-center mb-4 px-2">
+                     <h2 class="text-3xl font-bold text-pink-500 border-b-4 border-pink-500 pb-1">Happening at The Gateway</h2>
+                     <div class="text-right">
+                        <p class="text-sm text-gray-400">Live Updates</p>
+                     </div>
+                </div>
+                
+                <!-- Events Grid (Content populated by JS) -->
+                <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow pb-2">
+                    <!-- Fallback if JSON fails to load -->
+                    <div class="col-span-2 flex flex-col items-center justify-center bg-gray-700 rounded-xl p-8 border border-gray-600">
+                        <p class="text-xl mb-4">Loading upcoming events...</p>
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-pink-500"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Official Business (Moved to 2nd) -->
+        <div id="slide-2" class="slide-container">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 h-full grid-rows-[auto_1fr]">
                 
                 <!-- Primary Message: Insurance Update -->
@@ -79,7 +100,6 @@
                                 Unit owners are now personally responsible for this amount for any loss affecting their unit. It is critical that you contact your personal insurance agent immediately.
                             </p>
                         </div>
-                        <!-- Action Checklist Box -->
                         <div class="bg-indigo-900 p-4 rounded-lg border border-indigo-600 md:w-1/3 shadow-inner flex flex-col justify-center">
                             <h3 class="text-lg font-bold mb-2 text-indigo-200 uppercase tracking-wide">Action Required</h3>
                             <p class="mb-2 text-sm font-medium text-gray-100">Update your HO-6 Policy:</p>
@@ -99,13 +119,11 @@
 
                 <!-- Bottom Row Wrapper -->
                 <div class="lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-4 min-h-0">
-                    
-                    <!-- HOA Ombudsman Update -->
                     <div class="lg:col-span-2 bg-gray-700 text-gray-200 rounded-xl shadow-xl p-5 transform transition-transform hover:scale-105 flex flex-col justify-center">
                         <h2 class="text-xl font-bold text-white mb-2">New Utah HOA Ombudsman Office</h2>
                         <div class="space-y-3">
                             <p class="text-base leading-snug">
-                                The Dept. of Commerce has established a new <strong>HOA Ombudsman Office</strong>. This neutral office helps owners understand state laws and provides advisory opinions.
+                                The Dept. of Commerce has established a new <strong>HOA Ombudsman Office</strong>. This neutral office helps owners understand state laws.
                             </p>
                             <div class="bg-gray-800 p-3 rounded-lg border-l-4 border-indigo-500">
                                 <h3 class="font-bold text-white text-sm mb-1">New State Registry Requirement</h3>
@@ -115,10 +133,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Mobile FOBs -->
                     <div class="bg-gray-700 text-gray-200 rounded-xl shadow-xl p-5 transform transition-transform hover:scale-105 flex flex-col items-center justify-center text-center">
-                        <h2 class="text-xl font-bold text-white mb-2">Unlock Doors via Phone!</h2>
+                        <h2 class="text-xl font-bold text-white mb-2">Unlock via Phone!</h2>
                         <p class="text-sm mb-2 text-indigo-200 font-semibold">Scan to sign in & enroll:</p>
                         <div class="bg-white p-2 rounded-lg shadow-md inline-block">
                             <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://pmsystems.appfolio.com/connect/users/sign_in" alt="QR Code" class="w-24 h-24">
@@ -128,14 +144,12 @@
             </div>
         </div>
 
-        <!-- SLIDE 2: Community Marketplace Notice -->
-        <div id="slide-2" class="slide-container">
+        <!-- SLIDE 3: Community Marketplace (Moved to 3rd) -->
+        <div id="slide-3" class="slide-container">
             <div class="h-full flex flex-col justify-center items-center">
                 <div class="bg-teal-800 text-white rounded-xl shadow-xl p-8 max-w-5xl w-full transform transition-transform hover:scale-105 border border-teal-600">
                     <h2 class="text-3xl md:text-4xl font-bold mb-8 border-b-4 border-teal-500 pb-4 text-center">Community Marketplace & Notice Update</h2>
-                    
                     <div class="space-y-8 text-lg">
-                        <!-- Warning Box -->
                         <div class="bg-teal-900 p-6 rounded-lg border-l-8 border-yellow-400 shadow-md">
                             <div class="flex items-start gap-4">
                                 <svg class="w-8 h-8 text-yellow-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
@@ -147,32 +161,18 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Info Text -->
                         <p class="text-xl text-center leading-relaxed font-medium">
                             All resident listings (parking rentals, items for sale) and community notices will now be displayed digitally on this screen.
                         </p>
-
-                        <!-- Instructions & QR Code -->
                         <div class="bg-white text-gray-800 p-6 rounded-lg shadow-inner flex flex-col md:flex-row items-center gap-6">
                             <div class="flex-grow">
                                 <h3 class="text-2xl font-bold mb-4 text-teal-800 text-center md:text-left">How to Post an Item:</h3>
                                 <div class="w-full text-left space-y-3 text-lg">
-                                    <p class="flex items-center gap-3">
-                                        <span class="bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</span>
-                                        <span>Log in to the <span class="font-bold text-teal-700">AppFolio Resident Portal</span>.</span>
-                                    </p>
-                                    <p class="flex items-center gap-3">
-                                        <span class="bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</span>
-                                        <span>Submit a <span class="font-bold text-teal-700">Maintenance Request</span> for approval.</span>
-                                    </p>
-                                    <p class="flex items-center gap-3">
-                                        <span class="bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</span>
-                                        <span>Include your ad details (description, price, contact info).</span>
-                                    </p>
+                                    <p class="flex items-center gap-3"><span class="bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</span><span>Log in to the <span class="font-bold text-teal-700">AppFolio Resident Portal</span>.</span></p>
+                                    <p class="flex items-center gap-3"><span class="bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</span><span>Submit a <span class="font-bold text-teal-700">Maintenance Request</span> for approval.</span></p>
+                                    <p class="flex items-center gap-3"><span class="bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</span><span>Include your ad details.</span></p>
                                 </div>
                             </div>
-                            <!-- QR Code Block -->
                             <div class="flex-shrink-0 text-center bg-gray-100 p-3 rounded-lg border border-gray-200">
                                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://pmsystems.appfolio.com/connect/users/sign_in" alt="Scan to Login" class="w-32 h-32 mb-2 mx-auto">
                                 <p class="text-sm font-bold text-teal-800 uppercase tracking-wide">Scan to Login</p>
@@ -185,19 +185,20 @@
 
     </main>
 
-    <!-- Footer Section (Compacted) -->
+    <!-- Footer Section -->
     <footer class="bg-gray-900 text-white text-center p-3 z-20 flex-shrink-0">
         <p class="font-medium text-base">
             <span id="current-date"></span> &bull; Have a wonderful day!
         </p>
-        <!-- Slide Indicator -->
+        <!-- 3 Dots for 3 Slides -->
         <div class="flex justify-center gap-2 mt-1">
             <div id="dot-1" class="w-2 h-2 rounded-full bg-white transition-all duration-300"></div>
             <div id="dot-2" class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300"></div>
+            <div id="dot-3" class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300"></div>
         </div>
     </footer>
 
-    <!-- Script A: Date Logic -->
+    <!-- Logic: Date & Refresh -->
     <script>
         function updateDate() {
             const dateElement = document.getElementById('current-date');
@@ -208,55 +209,80 @@
             }
         }
         updateDate();
-        (function scheduleMidnightUpdate() {
-            const now = new Date();
-            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-            setTimeout(function() {
-                updateDate();
-                setInterval(updateDate, 24 * 60 * 60 * 1000);
-            }, tomorrow - now);
-        })();
-    </script>
-    
-    <!-- Script B: 24-Hour Refresh -->
-    <script>
-        const REFRESH_INTERVAL = 24 * 60 * 60 * 1000;
-        setInterval(function() {
-            window.location.reload(true);
-        }, REFRESH_INTERVAL);
+        setInterval(updateDate, 60000); // Check every minute
+        
+        // Refresh page every 1 hour to pick up new json content
+        setTimeout(function() { window.location.reload(true); }, 60 * 60 * 1000);
     </script>
 
-    <!-- Script C: Slide Rotation Logic -->
+    <!-- Logic: Gateway Events Fetcher -->
     <script>
-        const SLIDE_DURATION = 15000; // 15 seconds
-
-        let currentSlide = 1;
-        const slide1 = document.getElementById('slide-1');
-        const slide2 = document.getElementById('slide-2');
-        const dot1 = document.getElementById('dot-1');
-        const dot2 = document.getElementById('dot-2');
-
-        function toggleSlides() {
-            if (currentSlide === 1) {
-                // To Slide 2
-                slide1.classList.remove('slide-active');
-                slide2.classList.add('slide-active');
+        async function loadEvents() {
+            try {
+                const response = await fetch('gateway_events.json');
+                if (!response.ok) throw new Error("JSON not found");
+                const events = await response.json();
                 
-                dot1.classList.replace('bg-white', 'bg-gray-600');
-                dot2.classList.replace('bg-gray-600', 'bg-white');
-                currentSlide = 2;
-            } else {
-                // To Slide 1
-                slide2.classList.remove('slide-active');
-                slide1.classList.add('slide-active');
-                
-                dot1.classList.replace('bg-gray-600', 'bg-white');
-                dot2.classList.replace('bg-white', 'bg-gray-600');
-                currentSlide = 1;
+                const grid = document.getElementById('events-grid');
+                grid.innerHTML = ''; // Clear placeholder
+
+                events.forEach(event => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-gray-700 rounded-xl p-5 shadow-lg border-l-4 border-pink-500 flex flex-col hover:bg-gray-600 transition-colors';
+                    
+                    card.innerHTML = `
+                        <h3 class="text-xl font-bold text-white mb-1 line-clamp-1">${event.title}</h3>
+                        <p class="text-pink-300 font-semibold text-sm mb-2">${event.date}</p>
+                        <p class="text-gray-300 text-base leading-snug line-clamp-3">${event.description}</p>
+                    `;
+                    grid.appendChild(card);
+                });
+            } catch (err) {
+                console.log("Events fetch error:", err);
+                const grid = document.getElementById('events-grid');
+                grid.innerHTML = `
+                    <div class="col-span-2 flex flex-col items-center justify-center bg-gray-700 rounded-xl p-6 border border-gray-600">
+                        <p class="text-lg font-semibold text-white mb-2">View Full Calendar Online</p>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://atthegateway.com/calendar/" class="w-24 h-24 rounded shadow mb-2">
+                        <p class="text-gray-400 text-sm">Scan to see what's happening</p>
+                    </div>
+                `;
             }
         }
+        loadEvents();
+    </script>
 
-        setInterval(toggleSlides, SLIDE_DURATION);
+    <!-- Logic: 3-Slide Rotation -->
+    <script>
+        const SLIDE_DURATION = 30000; // 30 seconds
+
+        let currentSlide = 1;
+        const totalSlides = 3;
+
+        function showSlide(slideNum) {
+            // Hide all slides
+            for (let i = 1; i <= totalSlides; i++) {
+                const slide = document.getElementById(`slide-${i}`);
+                const dot = document.getElementById(`dot-${i}`);
+                
+                if (i === slideNum) {
+                    slide.classList.add('slide-active');
+                    dot.classList.replace('bg-gray-600', 'bg-white');
+                } else {
+                    slide.classList.remove('slide-active');
+                    dot.classList.replace('bg-white', 'bg-gray-600');
+                }
+            }
+            currentSlide = slideNum;
+        }
+
+        function nextSlide() {
+            let next = currentSlide + 1;
+            if (next > totalSlides) next = 1;
+            showSlide(next);
+        }
+
+        setInterval(nextSlide, SLIDE_DURATION);
     </script>
 
 </body>
