@@ -1,12 +1,6 @@
 [
   {
     "title": "Christmas Parlor at the Hidden Boot Saloon",
-    "date": "January 1 @ 5:00 pm - 11:00 pm",
-    "description": "Enjoy the western Christmas spirit at the Christmas Parlor in the Hidden Boot Saloon at Flanker K...",
-    "image": "https://atthegateway.com/wp-content/uploads/2025/12/Open-Now-960x640-1.jpg"
-  },
-  {
-    "title": "Christmas Parlor at the Hidden Boot Saloon",
     "date": "January 2 @ 5:00 pm - January 3 @ 1:00 am",
     "description": "Enjoy the western Christmas spirit at the Christmas Parlor in the Hidden Boot Saloon at Flanker K...",
     "image": "https://atthegateway.com/wp-content/uploads/2025/12/Open-Now-960x640-1.jpg"
@@ -20,6 +14,12 @@
   {
     "title": "Christmas Parlor at the Hidden Boot Saloon",
     "date": "January 5 @ 5:00 pm - 11:00 pm",
+    "description": "Enjoy the western Christmas spirit at the Christmas Parlor in the Hidden Boot Saloon at Flanker K...",
+    "image": "https://atthegateway.com/wp-content/uploads/2025/12/Open-Now-960x640-1.jpg"
+  },
+  {
+    "title": "Christmas Parlor at the Hidden Boot Saloon",
+    "date": "January 6 @ 5:00 pm - 11:00 pm",
     "description": "Enjoy the western Christmas spirit at the Christmas Parlor in the Hidden Boot Saloon at Flanker K...",
     "image": "https://atthegateway.com/wp-content/uploads/2025/12/Open-Now-960x640-1.jpg"
   }
