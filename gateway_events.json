@@ -1,12 +1,6 @@
 [
   {
     "title": "The Zero Proof Playbook",
-    "date": "January 8 @ 5:00 pm - 11:00 pm",
-    "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
-  },
-  {
-    "title": "The Zero Proof Playbook",
     "date": "January 9 @ 5:00 pm - 11:00 pm",
     "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
@@ -22,5 +16,11 @@
     "date": "January 11 @ 10:00 am - 4:00 pm",
     "description": "Join us every second Sunday of each month for the Urban Flea Market at The Gateway.",
     "image": "https://atthegateway.com/wp-content/uploads/2024/10/Winter-Urban-Flea-Market-2020-36-1.jpg"
+  },
+  {
+    "title": "The Zero Proof Playbook",
+    "date": "January 11 @ 10:30 am - 9:00 pm",
+    "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
   }
 ]
