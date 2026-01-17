@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Record and Summarize App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style for links */
+        a {
+            color: #2563eb; /* A nice blue color */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        /* Add some extra spacing for lists */
+        ul {
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="container mx-auto max-w-3xl px-4 py-8 md:py-12">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Support</h1>
+            <p class="text-gray-600">For the Record and Summarize App</p>
+        </header>
+
+        <main class="space-y-8">
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b pb-2">Contact Us</h2>
+                <p>
+                    Have a question or found a bug? We are here to help! Please email us at:
+                </p>
+                <p class="mt-4 font-semibold text-lg">
+                    <a href="mailto:roylance.michael@gmail.com">roylance.michael@gmail.com</a>
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b pb-2">Frequently Asked Questions</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-gray-900">How do I get a Gemini API Key?</h3>
+                        <p class="mt-2">
+                            You can generate a free API key from Google AI Studio.
+                        </p>
+                        <ul class="mt-2">
+                            <li>Go to <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">https://aistudio.google.com/app/apikey</a>.</li>
+                            <li>Create a new key.</li>
+                            <li>Open the app <strong>Settings</strong>, paste the key, and click <strong>Save</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-gray-900">Where are my recordings saved?</h3>
+                        <p class="mt-2">
+                            Your recordings and summaries are stored locally on your device in your secure documents folder. They are not uploaded to any cloud server (other than the text sent temporarily to Gemini for summarization).
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-gray-900">Why does the app need Microphone permission?</h3>
+                        <p class="mt-2">
+                            The app's primary function is to record audio for summarization. We only access the microphone when you explicitly tap the "Record" button.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-gray-900">How do I customize the summary style?</h3>
+                        <p class="mt-2">
+                            Tap the <strong>Edit Note</strong> icon in the top right corner of the main screen. You can enable <strong>Custom Prompt</strong> and type instructions like "Summarize as a bulleted list" or "Focus on action items."
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-gray-900">What happens if I close the app while recording?</h3>
+                        <p class="mt-2">
+                            <strong>On Desktop:</strong> The recording will stop if the app process is terminated.
+                        </p>
+                        <p class="mt-2">
+                            <strong>On Mobile (Android/iOS):</strong> The app runs a foreground service, so recording will continue even if you lock your screen or switch to another app.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4 border-b pb-2">Important Links</h2>
+                <p>
+                    Check out our <a href="privacy_policy.html">Privacy Policy</a> for information on how we handle your data.
+                </p>
+            </section>
+        </main>
+
+        <footer class="text-center text-sm text-gray-500 mt-12">
+            <p>&copy; 2026 Record and Summarize App. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
