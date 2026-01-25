@@ -1,18 +1,6 @@
 [
   {
     "title": "The Zero Proof Playbook",
-    "date": "January 24 @ 12:00 pm - 11:59 pm",
-    "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
-  },
-  {
-    "title": "K-Pop Demon Hunter Paint N Sip",
-    "date": "January 24 @ 2:00 pm - 5:00 pm",
-    "description": "Head to HallPass for a kid-friendly Paint N Sip!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Image_20260113_151019_446.png"
-  },
-  {
-    "title": "The Zero Proof Playbook",
     "date": "January 25 @ 10:30 am - 9:00 pm",
     "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
@@ -22,5 +10,17 @@
     "date": "January 26 @ 5:00 pm - 11:00 pm",
     "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
+  },
+  {
+    "title": "The Zero Proof Playbook",
+    "date": "January 27 @ 5:00 pm - 11:00 pm",
+    "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
+  },
+  {
+    "title": "Yoga & Beer",
+    "date": "January 27 @ 6:00 pm - 7:00 pm",
+    "description": "Move and stretch your body with us at this FREE weekly yoga class!",
+    "image": "https://atthegateway.com/wp-content/uploads/2025/12/Yoga-Beer-2026-Event.png"
   }
 ]
