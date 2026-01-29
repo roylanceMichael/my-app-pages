@@ -1,12 +1,6 @@
 [
   {
     "title": "The Zero Proof Playbook",
-    "date": "January 28 @ 5:00 pm - 11:00 pm",
-    "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
-  },
-  {
-    "title": "The Zero Proof Playbook",
     "date": "January 29 @ 5:00 pm - 11:00 pm",
     "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
@@ -22,5 +16,11 @@
     "date": "January 30 @ 5:00 pm - 11:00 pm",
     "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
+  },
+  {
+    "title": "Psychedelics in the Beehive Festival",
+    "date": "January 31 @ 10:00 am - 10:00 pm",
+    "description": "Join Psychedelics in the Beehive for their urban winter festival!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Psychedlics-in-the-Beehive.jpg"
   }
 ]
