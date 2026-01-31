@@ -1,18 +1,6 @@
 [
   {
     "title": "Psychedelics in the Beehive Festival",
-    "date": "January 30 @ 10:00 am - 10:00 pm",
-    "description": "Join Psychedelics in the Beehive for their urban winter festival!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Psychedlics-in-the-Beehive.jpg"
-  },
-  {
-    "title": "The Zero Proof Playbook",
-    "date": "January 30 @ 5:00 pm - 11:00 pm",
-    "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
-  },
-  {
-    "title": "Psychedelics in the Beehive Festival",
     "date": "January 31 @ 10:00 am - 10:00 pm",
     "description": "Join Psychedelics in the Beehive for their urban winter festival!",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/Psychedlics-in-the-Beehive.jpg"
@@ -22,5 +10,17 @@
     "date": "January 31 @ 12:00 pm - 11:59 pm",
     "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
+  },
+  {
+    "title": "Bohemian Bum Farmer\u2019s Market",
+    "date": "February 1 @ 10:00 am - 3:00 pm",
+    "description": "Join us for a treasure trove of unique goods, delectable treats, and a warm, welcoming atmosphere!",
+    "image": "https://atthegateway.com/wp-content/uploads/2019/02/Bohemian-Bum-Farmers-Market-2024.jpg"
+  },
+  {
+    "title": "Yoga & Beer",
+    "date": "February 3 @ 6:00 pm - 7:00 pm",
+    "description": "Move and stretch your body with us at this FREE weekly yoga class!",
+    "image": "https://atthegateway.com/wp-content/uploads/2025/12/Yoga-Beer-2026-Event.png"
   }
 ]
