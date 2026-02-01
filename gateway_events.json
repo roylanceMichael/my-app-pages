@@ -1,17 +1,5 @@
 [
   {
-    "title": "Psychedelics in the Beehive Festival",
-    "date": "January 31 @ 10:00 am - 10:00 pm",
-    "description": "Join Psychedelics in the Beehive for their urban winter festival!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Psychedlics-in-the-Beehive.jpg"
-  },
-  {
-    "title": "The Zero Proof Playbook",
-    "date": "January 31 @ 12:00 pm - 11:59 pm",
-    "description": "In January, Flanker is serving flavorful mocktails and tasty bites every day.",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640.jpg"
-  },
-  {
     "title": "Bohemian Bum Farmer\u2019s Market",
     "date": "February 1 @ 10:00 am - 3:00 pm",
     "description": "Join us for a treasure trove of unique goods, delectable treats, and a warm, welcoming atmosphere!",
@@ -19,8 +7,20 @@
   },
   {
     "title": "Yoga & Beer",
-    "date": "February 3 @ 6:00 pm - 7:00 pm",
+    "date": "February 3 @ 6:00 pm - 7:00 pm| (See all)An event every week that begins at 6:00 pm on Tuesday, repeating until April 14, 2026",
     "description": "Move and stretch your body with us at this FREE weekly yoga class!",
     "image": "https://atthegateway.com/wp-content/uploads/2025/12/Yoga-Beer-2026-Event.png"
+  },
+  {
+    "title": "Flanker Winter Games",
+    "date": "February 6 @ 5:00 pm - 11:00 pm",
+    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
+  },
+  {
+    "title": "Hidden Boot Saloon\u2019s 1-Year Anniversary",
+    "date": "February 6 @ 10:00 pm - 11:30 pm",
+    "description": "Celebrate the Hidden Boot Saloon's anniversary at Flanker!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/HBS-Friday.jpg"
   }
 ]
