@@ -1,13 +1,7 @@
 [
   {
-    "title": "Bohemian Bum Farmer\u2019s Market",
-    "date": "February 1 @ 10:00 am - 3:00 pm",
-    "description": "Join us for a treasure trove of unique goods, delectable treats, and a warm, welcoming atmosphere!",
-    "image": "https://atthegateway.com/wp-content/uploads/2019/02/Bohemian-Bum-Farmers-Market-2024.jpg"
-  },
-  {
     "title": "Yoga & Beer",
-    "date": "February 3 @ 6:00 pm - 7:00 pm| (See all)An event every week that begins at 6:00 pm on Tuesday, repeating until April 14, 2026",
+    "date": "February 3 @ 6:00 pm - 7:00 pm",
     "description": "Move and stretch your body with us at this FREE weekly yoga class!",
     "image": "https://atthegateway.com/wp-content/uploads/2025/12/Yoga-Beer-2026-Event.png"
   },
@@ -22,5 +16,11 @@
     "date": "February 6 @ 10:00 pm - 11:30 pm",
     "description": "Celebrate the Hidden Boot Saloon's anniversary at Flanker!",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/HBS-Friday.jpg"
+  },
+  {
+    "title": "Flanker Winter Games",
+    "date": "February 7 @ 5:00 pm - 11:00 pm",
+    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
   }
 ]
