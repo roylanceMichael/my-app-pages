@@ -43,8 +43,8 @@
         
         /* Pulse animation for urgent notices */
         @keyframes pulse-border {
-            0%, 100% { border-color: rgba(245, 158, 11, 1); }
-            50% { border-color: rgba(245, 158, 11, 0.5); }
+            0%, 100% { border-color: rgba(16, 185, 129, 1); } /* Green pulse for LIVE */
+            50% { border-color: rgba(16, 185, 129, 0.5); }
         }
         .urgent-border {
             animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -75,66 +75,67 @@
         <!-- SLIDE 1: TRANSITION ALERT (First Position) -->
         <div id="slide-1" class="slide-container slide-active">
             <div class="h-full flex flex-col justify-center items-center">
-                <div class="bg-gray-800 text-white rounded-xl shadow-2xl p-8 max-w-6xl w-full border-4 border-amber-600 urgent-border">
+                <div class="bg-gray-800 text-white rounded-xl shadow-2xl p-8 max-w-6xl w-full border-4 border-emerald-500 urgent-border">
                     
                     <!-- Header -->
-                    <div class="flex items-center gap-6 mb-6 border-b-4 border-amber-600 pb-4">
-                        <div class="bg-amber-600 p-4 rounded-full animate-bounce">
-                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                    <div class="flex items-center gap-6 mb-6 border-b-4 border-emerald-500 pb-4">
+                        <div class="bg-emerald-600 p-4 rounded-full animate-bounce">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <div>
-                            <h2 class="text-4xl md:text-5xl font-extrabold text-white">URGENT: Software Transition</h2>
-                            <p class="text-xl text-amber-400 font-bold uppercase tracking-wide">Action Required by Feb 1st</p>
+                            <h2 class="text-4xl md:text-5xl font-extrabold text-white">New Portal is LIVE!</h2>
+                            <p class="text-xl text-emerald-400 font-bold uppercase tracking-wide">Login & Setup Payment Immediately</p>
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         
-                        <!-- Timeline Column -->
-                        <div class="bg-gray-700 p-6 rounded-xl border-l-4 border-amber-500">
-                            <h3 class="text-2xl font-bold mb-4 text-white">Critical Timeline</h3>
-                            <ul class="space-y-6 relative border-l-2 border-gray-600 ml-3 pl-6">
-                                <li class="relative">
-                                    <span class="absolute -left-[33px] bg-red-500 h-4 w-4 rounded-full mt-1.5"></span>
-                                    <p class="text-red-400 font-bold text-lg">JAN 27</p>
-                                    <p class="text-xl text-white">AppFolio Autopay CANCELLED</p>
-                                    <p class="text-sm text-gray-400">All scheduled payments stop.</p>
+                        <!-- Login Instructions -->
+                        <div class="bg-gray-700 p-6 rounded-xl border-l-4 border-emerald-500">
+                            <h3 class="text-2xl font-bold mb-4 text-white">How to Access</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 mt-1">1</span>
+                                    <div>
+                                        <p class="font-bold text-lg text-white">Check Your Email</p>
+                                        <p class="text-gray-300 text-sm">Look for an email from PMSI with your <strong>Temporary Password</strong>.</p>
+                                    </div>
                                 </li>
-                                <li class="relative">
-                                    <span class="absolute -left-[33px] bg-gray-500 h-4 w-4 rounded-full mt-1.5"></span>
-                                    <p class="text-gray-400 font-bold text-lg">JAN 29</p>
-                                    <p class="text-xl text-white">AppFolio Access ENDS</p>
-                                    <p class="text-sm text-gray-400">Portal offline. No maintenance requests.</p>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 mt-1">2</span>
+                                    <div>
+                                        <p class="font-bold text-lg text-white">Go to <span class="text-emerald-300 underline">home.pmsystems.net</span></p>
+                                        <p class="text-gray-300 text-sm">Or scan the QR code to the right.</p>
+                                    </div>
                                 </li>
-                                <li class="relative">
-                                    <span class="absolute -left-[33px] bg-green-500 h-4 w-4 rounded-full mt-1.5"></span>
-                                    <p class="text-green-400 font-bold text-lg">FEB 01</p>
-                                    <p class="text-xl text-white">Vantaca (New System) LIVE</p>
-                                    <p class="text-sm text-gray-400">Watch email for new login.</p>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 mt-1">3</span>
+                                    <div>
+                                        <p class="font-bold text-lg text-white">Log In</p>
+                                        <p class="text-gray-300 text-sm">Click <strong>"Log In With Password"</strong>. If it fails, try "Log In With One-Time Code."</p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
 
                         <!-- Action Column -->
                         <div class="flex flex-col justify-between">
-                            <div class="bg-red-900/50 p-6 rounded-xl border border-red-500 mb-4">
-                                <h3 class="text-2xl font-bold text-red-400 mb-2 flex items-center gap-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                                    PAYMENT WARNING
+                            <div class="bg-red-900/50 p-6 rounded-xl border border-red-500 mb-4 text-center">
+                                <h3 class="text-2xl font-bold text-red-400 mb-2 uppercase">
+                                    Payment Action Required
                                 </h3>
-                                <p class="text-xl text-white font-medium leading-relaxed">
-                                    Your current Autopay <strong class="text-red-300 underline">WILL NOT TRANSFER</strong>.
+                                <p class="text-lg text-gray-200 mb-2">
+                                    Your old Autopay <strong>did not transfer</strong>.
                                 </p>
-                                <!-- CHANGED TEXT: Softened the late fee warning -->
-                                <p class="mt-2 text-gray-300">
-                                    You <strong>must</strong> log in to Vantaca on Feb 1st and manually re-enroll to ensure timely payment.
+                                <p class="text-white font-bold text-xl">
+                                    Please log in and pay your dues <span class="underline decoration-red-500">TODAY</span>.
                                 </p>
                             </div>
 
-                            <div class="bg-gray-700 p-5 rounded-xl text-center">
-                                <p class="text-gray-400 text-sm uppercase mb-1">During the "Blackout" (Jan 29 - Feb 1)</p>
-                                <p class="text-white font-bold text-lg">For Emergencies Contact PMSI:</p>
-                                <p class="text-3xl font-extrabold text-amber-500 tracking-wider">801-262-3900</p>
+                            <div class="flex flex-col items-center justify-center bg-white p-4 rounded-xl shadow-lg">
+                                <!-- QR Code pointing to home.pmsystems.net -->
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://home.pmsystems.net/" alt="Scan to Login" class="w-32 h-32 mb-2">
+                                <p class="text-gray-800 font-bold uppercase tracking-wide text-sm">Scan to Log In</p>
                             </div>
                         </div>
 
@@ -192,15 +193,14 @@
                             </div>
                         </div>
                     </div>
-                    <!-- REPLACED: Mobile FOBs with Transition Warning -->
-                    <div class="bg-gray-700 text-gray-200 rounded-xl shadow-xl p-5 transform transition-transform hover:scale-105 flex flex-col items-center justify-center text-center opacity-80">
-                        <div class="bg-amber-600 text-white rounded-full p-3 mb-2">
-                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    <!-- REPLACED: Portal Update Status -->
+                    <div class="bg-gray-700 text-gray-200 rounded-xl shadow-xl p-5 transform transition-transform hover:scale-105 flex flex-col items-center justify-center text-center opacity-90">
+                        <div class="bg-emerald-600 text-white rounded-full p-3 mb-2">
+                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <h2 class="text-xl font-bold text-white mb-1">Portal Update</h2>
-                        <p class="text-sm text-gray-300 mb-2">Mobile Enrollment Paused</p>
-                        <!-- CHANGED TEXT HERE -->
-                        <p class="text-xs text-amber-400 font-bold uppercase">See Previous Slide for Info</p>
+                        <h2 class="text-xl font-bold text-white mb-1">Portal Active</h2>
+                        <p class="text-sm text-gray-300 mb-2">Vantaca is Live</p>
+                        <p class="text-xs text-emerald-400 font-bold uppercase">See Previous Slide for Info</p>
                     </div>
                 </div>
             </div>
