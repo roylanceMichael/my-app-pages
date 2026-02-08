@@ -1,5 +1,11 @@
 [
   {
+    "unit": "104",
+    "price": "$959,900",
+    "details": "3 Bedrooms | 3.00 Bathrooms | 2,560 sq. ft.",
+    "link": ""
+  },
+  {
     "unit": "308",
     "price": "$449,900",
     "details": "1 Bedrooms | 2.00 Bathrooms | 909 sq. ft.",
@@ -9,6 +15,12 @@
     "unit": "309",
     "price": "$379,000",
     "details": "1 Bedrooms | 2.00 Bathrooms | 880 sq. ft.",
+    "link": ""
+  },
+  {
+    "unit": "502",
+    "price": "$500,000",
+    "details": "2 Bedrooms | 2.00 Bathrooms | 1,275 sq. ft.",
     "link": ""
   },
   {

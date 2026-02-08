@@ -29,15 +29,25 @@ def scrape_listings():
             page.goto(URL, timeout=60000)
             page.wait_for_timeout(5000) # Initial hydrate
             
-            max_pages = 5
+            max_pages = 10
             current_page = 1
             
             while current_page <= max_pages:
-                print(f"--- Scanning Page {current_page} ---")
+                current_url = f"{URL}&page={current_page}"
+                print(f"--- Scanning Page {current_page} ({current_url}) ---")
+                
+                if current_page > 1:
+                    page.goto(current_url, timeout=60000)
+                    page.wait_for_timeout(4000)
                 
                 # Grab all listing cards on current page
                 listing_tables = page.locator(".public-detail-quickview").all()
-                print(f"Found {len(listing_tables)} listings on this page.")
+                count = len(listing_tables)
+                print(f"Found {count} listings on this page.")
+                
+                if count == 0:
+                    print("No listings found on this page. Ending scrape.")
+                    break
                 
                 for table in listing_tables:
                     try:
@@ -114,20 +124,8 @@ def scrape_listings():
                     except Exception as e:
                         print(f"Error parsing listing: {e}")
 
-                # Pagination Logic
-                # Look for a "Next" button.
-                # URE pagination usually has class 'pagination' and next arrow
-                # We can try finding a link with text ">" or class "next"
-                next_btn = page.locator("ul.pagination li a[rel='next']").first
-                
-                if next_btn.count() > 0 and next_btn.is_visible():
-                    print("Navigating to next page...")
-                    next_btn.click()
-                    page.wait_for_timeout(4000) # Wait for reload
-                    current_page += 1
-                else:
-                    print("No 'Next' button found or end of results.")
-                    break
+                # Pagination Logic - URL based
+                current_page += 1
 
         except Exception as e:
             print(f"Browser error: {e}")
