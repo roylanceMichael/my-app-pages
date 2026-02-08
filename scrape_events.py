@@ -85,7 +85,9 @@ def scrape_calendar():
             
             # Clean the URL to ensure we get the full size (remove query params like ?resize=...)
             if raw_src:
-                image_src = raw_src.split('?')[0]
+                # Use the provided URL as-is. It often includes resizing parameters (e.g. ?resize=...)
+                # which are better for performance than fetching the full-resolution original.
+                image_src = raw_src
 
         events_data.append({
             "title": title,

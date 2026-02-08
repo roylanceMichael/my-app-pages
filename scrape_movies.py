@@ -4,6 +4,8 @@ import json
 import os
 import re
 import time
+from PIL import Image
+from io import BytesIO
 
 # Configuration
 # IMDB Showtimes URL for Megaplex Gateway (Zip 84101)
@@ -28,7 +30,7 @@ def slugify(text):
     return re.sub(r'[^a-z0-9]+', '-', text).strip('-')
 
 def download_poster(img_url, title):
-    """Downloads poster image and saves to local directory."""
+    """Downloads poster image, resizes it, and saves to local directory."""
     if not img_url:
         return None
         
@@ -38,17 +40,32 @@ def download_poster(img_url, title):
     filename = f"{slugify(title)}.jpg"
     filepath = os.path.join(POSTER_DIR, filename)
     
-    # If file exists and is > 0 bytes, skip download (cache)
+    # If file exists and is > 0 bytes, we might want to check if it's the optimized version.
+    # For now, if it exists, we assume it's good to save bandwidth. 
+    # If you want to force re-optimization, delete the posters folder.
     if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
         return filename
 
     try:
-        print(f"Downloading poster for {title}...")
-        # IMDB images might be resized; remove params for full size if needed, but default is fine
+        print(f"Downloading and optimizing poster for {title}...")
         r = requests.get(img_url, headers=HEADERS, timeout=10)
         if r.status_code == 200:
-            with open(filepath, 'wb') as f:
-                f.write(r.content)
+            # Optimize Image with Pillow
+            img = Image.open(BytesIO(r.content))
+            
+            # Convert to RGB if necessary (e.g. for PNGs with alpha)
+            if img.mode in ("RGBA", "P"):
+                img = img.convert("RGB")
+            
+            # Resize logic: Limit width to 400px, preserve aspect ratio
+            max_width = 400
+            if img.width > max_width:
+                w_percent = (max_width / float(img.width))
+                h_size = int((float(img.height) * float(w_percent)))
+                img = img.resize((max_width, h_size), Image.Resampling.LANCZOS)
+            
+            # Save as optimized JPEG
+            img.save(filepath, "JPEG", quality=85, optimize=True)
             return filename
     except Exception as e:
         print(f"Failed to download poster for {title}: {e}")
@@ -83,7 +100,6 @@ def scrape_movies():
     try:
         json_data = json.loads(data_tag.string)
         # Navigate to the relevant data
-        # props.pageProps.titleAndShowtimeData
         titles_data = json_data.get("props", {}).get("pageProps", {}).get("titleAndShowtimeData", [])
         
         print(f"Found {len(titles_data)} movies in JSON data.")
@@ -100,7 +116,6 @@ def scrape_movies():
             # Rating
             rating_summary = title_obj.get("ratingsSummary", {})
             rating_val = rating_summary.get("aggregateRating", "")
-            # Convert float to string if exists, else "NR"
             rating_score = str(rating_val) if rating_val else "NR"
             
             # Content Rating (MPAA)
@@ -114,7 +129,6 @@ def scrape_movies():
             genres_list = title_obj.get("titleGenres", {}).get("genres", [])
             genre_text = ""
             if genres_list:
-                # Take the first genre
                 genre_text = genres_list[0].get("genre", {}).get("text", "")
 
             # Poster
@@ -126,16 +140,13 @@ def scrape_movies():
             for group in showtime_groups:
                 types = group.get("node", {}).get("showtimesByScreeningType", [])
                 for t in types:
-                    # We could distinguish "Standard", "3D" etc here if we wanted.
-                    # t['screeningType']['text'] e.g. "Standard"
                     times = t.get("showtimes", [])
                     for st in times:
                         start_text = st.get("screeningStart", {}).get("text", "")
                         if start_text:
                             showtimes.append(start_text)
             
-            # Sort showtimes? They usually come sorted.
-            # Deduplicate just in case
+            # Sort and deduplicate showtimes
             showtimes = sorted(list(set(showtimes)), key=lambda x: datetime_from_time_str(x))
 
             # Download Poster
@@ -146,11 +157,11 @@ def scrape_movies():
             if title and showtimes:
                 movies_data.append({
                     "title": title,
-                    "rating": cert, # Using Content Rating (PG-13) instead of score (6.6) for the board
-                    "score": rating_score, # Keeping score just in case we want it later
+                    "rating": cert, 
+                    "score": rating_score,
                     "runtime": runtime,
                     "genre": genre_text,
-                    "times": showtimes[:5], # Limit to 5 times
+                    "times": showtimes[:5], 
                     "poster": f"posters/{local_poster}" if local_poster else ""
                 })
 
@@ -159,7 +170,6 @@ def scrape_movies():
         return []
 
     # Cleanup Old Posters
-    # Only run cleanup if we actually found movies (safety check)
     if len(movies_data) > 0:
         current_posters = [m["poster"].split('/')[-1] for m in movies_data if m["poster"]]
         
