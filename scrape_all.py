@@ -1,5 +1,6 @@
 import scrape_events
 import scrape_movies
+import scrape_realestate
 import sys
 
 def main():
@@ -23,6 +24,14 @@ def main():
             print("No movies found. Skipping JSON update.")
     except Exception as e:
         print(f"Error updating movies: {e}", file=sys.stderr)
+
+    # 3. Update Real Estate
+    print("\n--- Updating Real Estate ---")
+    try:
+        listings = scrape_realestate.scrape_listings()
+        scrape_realestate.save_json(listings)
+    except Exception as e:
+        print(f"Error updating real estate: {e}", file=sys.stderr)
 
     print("\n=== Update Complete ===")
 
