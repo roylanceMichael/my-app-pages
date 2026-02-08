@@ -207,7 +207,7 @@
                     const movies = await mRes.json();
                     const mGrid = document.getElementById('movie-grid');
                     mGrid.innerHTML = '';
-                    movies.slice(0, 6).forEach(m => { // Limit to 6
+                    movies.slice(0, 9).forEach(m => { // Limit to 9
                         const poster = m.poster ? m.poster : `https://placehold.co/400x600/333/fff?text=${encodeURIComponent(m.title)}`;
                         mGrid.innerHTML += `
                         <div class="bg-gray-700 rounded-lg overflow-hidden flex flex-col shadow-lg border border-gray-600 h-full">
