@@ -38,24 +38,33 @@
         
         <!-- SLIDE 1: MOVIES (Dynamic from JSON) -->
         <div id="slide-1" class="slide-container slide-active">
-            <div class="h-full flex gap-6">
-                <div id="movie-grid" class="flex-grow grid grid-cols-3 gap-4 h-full content-start overflow-y-auto">
+            <div class="h-full flex flex-col gap-4">
+                <!-- Movie Grid -->
+                <div id="movie-grid" class="flex-grow grid grid-cols-3 lg:grid-cols-4 gap-4 content-start overflow-y-auto w-full">
                     <!-- Movie Cards Injected via JS -->
                     <div class="col-span-3 text-center text-gray-400 mt-10">Loading Movies...</div>
                 </div>
 
-                <!-- Sidebar -->
-                <div class="w-1/3 flex flex-col gap-4">
-                    <div class="bg-white rounded-xl p-6 shadow-xl text-center flex flex-col items-center justify-center flex-grow">
-                        <h2 class="text-2xl font-extrabold text-red-700 mb-2 uppercase">Megaplex Gateway</h2>
-                        <p class="text-gray-600 mb-4 text-sm font-medium">Scan for Tickets</p>
-                        <div class="bg-gray-100 p-2 rounded-xl shadow-inner mb-2">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://megaplex.com/gateway" alt="Scan" class="w-full h-auto">
+                <!-- Bottom Info Bar -->
+                <div class="bg-white rounded-xl p-3 shadow-xl flex flex-row items-center justify-between flex-shrink-0 h-24 border-b-4 border-red-700">
+                    <div class="flex items-center gap-4 px-4">
+                        <div class="bg-red-700 text-white p-3 rounded-lg shadow">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl md:text-2xl font-extrabold text-gray-800 uppercase tracking-tight">Megaplex Gateway</h2>
+                            <p class="text-red-700 text-xs font-bold uppercase tracking-wider">Luxury Heated Recliners</p>
                         </div>
                     </div>
-                    <div class="bg-red-900 p-4 rounded-xl shadow text-center border border-red-700">
-                        <p class="text-white font-bold">Luxury Heated Recliners</p>
-                        <p class="text-red-200 text-xs mt-1">Reserve your seat online</p>
+
+                    <div class="flex items-center gap-6 pr-4">
+                        <div class="text-right hidden md:block">
+                            <p class="text-gray-900 font-bold leading-tight">Scan for Tickets</p>
+                            <p class="text-gray-500 text-xs">Reserve seats online</p>
+                        </div>
+                        <div class="bg-gray-100 p-1 rounded-lg border border-gray-200">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://megaplex.com/gateway" alt="Scan" class="h-16 w-16">
+                        </div>
                     </div>
                 </div>
             </div>
