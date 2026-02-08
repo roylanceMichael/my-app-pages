@@ -4,56 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Parc Condominium Board</title>
-    <!-- Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for a clean, readable font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Dark Theme & Custom Font */
-        body {
-            background-color: #1f2937; /* Dark Slate Gray */
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        .hover\:scale-105:hover {
-            transform: scale(1.02);
-        }
-        
-        /* Slide Styling */
-        .slide-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transition: opacity 1s ease-in-out;
-            opacity: 0;
-            pointer-events: none; 
-            padding: 1rem;
-        }
-
-        .slide-active {
-            opacity: 1;
-            pointer-events: auto;
-            z-index: 10;
-        }
-        
-        /* Pulse animation for urgent notices */
-        @keyframes pulse-border {
-            0%, 100% { border-color: rgba(16, 185, 129, 1); } /* Green pulse for LIVE */
-            50% { border-color: rgba(16, 185, 129, 0.5); }
-        }
-        .urgent-border {
-            animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
+        body { background-color: #1f2937; font-family: 'Inter', sans-serif; }
+        .slide-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition: opacity 1s; opacity: 0; pointer-events: none; padding: 1rem; }
+        .slide-active { opacity: 1; pointer-events: auto; z-index: 10; }
+        @keyframes pulse-border { 0%, 100% { border-color: rgba(16, 185, 129, 1); } 50% { border-color: rgba(16, 185, 129, 0.5); } }
+        .urgent-border { animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
     </style>
 </head>
 <body class="bg-gray-800 text-gray-100 flex flex-col h-screen overflow-hidden">
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header class="bg-gray-900 text-white shadow-lg p-4 z-20 flex-shrink-0">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -64,20 +29,55 @@
                 </div>
             </div>
             <div class="hidden md:block bg-white p-1 rounded-lg shadow-md">
-                 <img src="https://img1.wsimg.com/isteam/ip/cb787039-4d6a-4b27-b23a-e6f8e95de85a/parcfront.jpg" alt="The Parc Condominium Entrance" class="w-24 h-24 object-cover rounded-md">
+                 <img src="https://img1.wsimg.com/isteam/ip/cb787039-4d6a-4b27-b23a-e6f8e95de85a/parcfront.jpg" alt="The Parc" class="w-24 h-24 object-cover rounded-md">
             </div>
         </div>
     </header>
 
-    <!-- Main Content Area -->
     <main class="flex-grow container mx-auto relative w-full h-full">
         
-        <!-- SLIDE 1: TRANSITION ALERT (First Position) -->
+        <!-- SLIDE 1: MOVIES (Dynamic from JSON) -->
         <div id="slide-1" class="slide-container slide-active">
+            <div class="h-full flex gap-6">
+                <div id="movie-grid" class="flex-grow grid grid-cols-3 gap-4 h-full content-start overflow-y-auto">
+                    <!-- Movie Cards Injected via JS -->
+                    <div class="col-span-3 text-center text-gray-400 mt-10">Loading Movies...</div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="w-1/3 flex flex-col gap-4">
+                    <div class="bg-white rounded-xl p-6 shadow-xl text-center flex flex-col items-center justify-center flex-grow">
+                        <h2 class="text-2xl font-extrabold text-red-700 mb-2 uppercase">Megaplex Gateway</h2>
+                        <p class="text-gray-600 mb-4 text-sm font-medium">Scan for Tickets</p>
+                        <div class="bg-gray-100 p-2 rounded-xl shadow-inner mb-2">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://megaplex.com/gateway" alt="Scan" class="w-full h-auto">
+                        </div>
+                    </div>
+                    <div class="bg-red-900 p-4 rounded-xl shadow text-center border border-red-700">
+                        <p class="text-white font-bold">Luxury Heated Recliners</p>
+                        <p class="text-red-200 text-xs mt-1">Reserve your seat online</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: EVENTS -->
+        <div id="slide-2" class="slide-container">
+            <div class="h-full flex flex-col">
+                <div class="flex justify-between items-center mb-4 px-2">
+                     <h2 class="text-3xl font-bold text-pink-500 border-b-4 border-pink-500 pb-1">Happening at The Gateway</h2>
+                     <div class="text-right"><p class="text-sm text-gray-400">Live Updates</p></div>
+                </div>
+                <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow pb-2">
+                    <!-- Event Cards Injected via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: PORTAL -->
+        <div id="slide-3" class="slide-container">
             <div class="h-full flex flex-col justify-center items-center">
                 <div class="bg-gray-800 text-white rounded-xl shadow-2xl p-8 max-w-6xl w-full border-4 border-emerald-500 urgent-border">
-                    
-                    <!-- Header -->
                     <div class="flex items-center gap-6 mb-6 border-b-4 border-emerald-500 pb-4">
                         <div class="bg-emerald-600 p-4 rounded-full animate-bounce">
                             <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -87,146 +87,69 @@
                             <p class="text-xl text-emerald-400 font-bold uppercase tracking-wide">Login & Setup Payment Immediately</p>
                         </div>
                     </div>
-
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        
-                        <!-- Login Instructions -->
                         <div class="bg-gray-700 p-6 rounded-xl border-l-4 border-emerald-500">
                             <h3 class="text-2xl font-bold mb-4 text-white">How to Access</h3>
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3">
                                     <span class="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 mt-1">1</span>
-                                    <div>
-                                        <p class="font-bold text-lg text-white">Check Your Email</p>
-                                        <p class="text-gray-300 text-sm">Look for an email from PMSI with your <strong>Temporary Password</strong>.</p>
-                                    </div>
+                                    <div><p class="font-bold text-lg text-white">Check Your Email</p><p class="text-gray-300 text-sm">Look for an email from PMSI with your <strong>Temporary Password</strong>.</p></div>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 mt-1">2</span>
-                                    <div>
-                                        <p class="font-bold text-lg text-white">Go to <span class="text-emerald-300 underline">home.pmsystems.net</span></p>
-                                        <p class="text-gray-300 text-sm">Or scan the QR code to the right.</p>
-                                    </div>
+                                    <div><p class="font-bold text-lg text-white">Go to <span class="text-emerald-300 underline">home.pmsystems.net</span></p><p class="text-gray-300 text-sm">Or scan the QR code to the right.</p></div>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 mt-1">3</span>
-                                    <div>
-                                        <p class="font-bold text-lg text-white">Log In</p>
-                                        <p class="text-gray-300 text-sm">Click <strong>"Log In With Password"</strong>. If it fails, try "Log In With One-Time Code."</p>
-                                    </div>
+                                    <div><p class="font-bold text-lg text-white">Log In</p><p class="text-gray-300 text-sm">Click <strong>"Log In With Password"</strong>. If it fails, try "Log In With One-Time Code."</p></div>
                                 </li>
                             </ul>
                         </div>
-
-                        <!-- Action Column -->
                         <div class="flex flex-col justify-between">
                             <div class="bg-red-900/50 p-6 rounded-xl border border-red-500 mb-4 text-center">
-                                <h3 class="text-2xl font-bold text-red-400 mb-2 uppercase">
-                                    Payment Action Required
-                                </h3>
-                                <p class="text-lg text-gray-200 mb-2">
-                                    Your old Autopay <strong>did not transfer</strong>.
-                                </p>
-                                <p class="text-white font-bold text-xl">
-                                    Please log in and pay your dues <span class="underline decoration-red-500">TODAY</span>.
-                                </p>
+                                <h3 class="text-2xl font-bold text-red-400 mb-2 uppercase">Payment Action Required</h3>
+                                <p class="text-lg text-gray-200 mb-2">Your old Autopay <strong>did not transfer</strong>.</p>
+                                <p class="text-white font-bold text-xl">Please log in and pay your dues <span class="underline decoration-red-500">TODAY</span>.</p>
                             </div>
-
                             <div class="flex flex-col items-center justify-center bg-white p-4 rounded-xl shadow-lg">
-                                <!-- QR Code pointing to home.pmsystems.net -->
                                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://home.pmsystems.net/" alt="Scan to Login" class="w-32 h-32 mb-2">
                                 <p class="text-gray-800 font-bold uppercase tracking-wide text-sm">Scan to Log In</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 2: Official Business -->
-        <div id="slide-2" class="slide-container">
+        <!-- SLIDE 4: NOTICES -->
+        <div id="slide-4" class="slide-container">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 h-full grid-rows-[auto_1fr]">
-                
-                <!-- Primary Message: Insurance Update -->
                 <div class="lg:col-span-3 bg-indigo-800 text-white rounded-xl shadow-xl p-6 transform transition-transform hover:scale-105 flex flex-col justify-center">
                     <h2 class="text-2xl font-bold mb-3 border-b-4 border-indigo-500 pb-1">IMPORTANT NOTICE: Insurance Deductible Change</h2>
                     <div class="flex flex-col md:flex-row gap-4">
                         <div class="flex-grow">
-                            <p class="text-lg mb-2 leading-snug">
-                                Effective <strong>October 1, 2025</strong>, the HOA Master Policy deductible for property damage has increased to <strong>$100,000</strong>.
-                            </p>
-                            <p class="text-base text-indigo-100 leading-snug">
-                                Unit owners are now personally responsible for this amount for any loss affecting their unit. It is critical that you contact your personal insurance agent immediately.
-                            </p>
+                            <p class="text-lg mb-2 leading-snug">Effective <strong>October 1, 2025</strong>, the HOA Master Policy deductible for property damage has increased to <strong>$100,000</strong>.</p>
+                            <p class="text-base text-indigo-100 leading-snug">Unit owners are now personally responsible for this amount for any loss affecting their unit. Contact your personal insurance agent immediately.</p>
                         </div>
                         <div class="bg-indigo-900 p-4 rounded-lg border border-indigo-600 md:w-1/3 shadow-inner flex flex-col justify-center">
                             <h3 class="text-lg font-bold mb-2 text-indigo-200 uppercase tracking-wide">Action Required</h3>
-                            <p class="mb-2 text-sm font-medium text-gray-100">Update your HO-6 Policy:</p>
                             <ul class="space-y-1 text-sm">
-                                <li class="flex items-center gap-2">
-                                    <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    <span class="text-indigo-50"><strong>$100k</strong> Dwelling Coverage</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    <span class="text-indigo-50"><strong>$10k</strong> Loss Assessment</span>
-                                </li>
+                                <li class="flex items-center gap-2"><span class="text-indigo-50"><strong>$100k</strong> Dwelling Coverage</span></li>
+                                <li class="flex items-center gap-2"><span class="text-indigo-50"><strong>$10k</strong> Loss Assessment</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-                <!-- Bottom Row Wrapper -->
                 <div class="lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-4 min-h-0">
-                    <!-- REPLACED: Ombudsman with Elevator Inspection -->
-                    <div class="lg:col-span-2 bg-gray-700 text-gray-200 rounded-xl shadow-xl p-5 transform transition-transform hover:scale-105 flex flex-col justify-center border-l-4 border-blue-500">
-                        <div class="flex items-center gap-3 mb-2">
-                            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <h2 class="text-xl font-bold text-white">Scheduled Elevator Inspection</h2>
-                        </div>
-                        <div class="space-y-3">
-                            <p class="text-base leading-snug">
-                                The state inspection is scheduled for <strong>Tuesday, Feb 10th at 7:00 AM</strong> with Otis technicians onsite.
-                            </p>
-                            <div class="bg-gray-800 p-3 rounded-lg border border-gray-600">
-                                <h3 class="font-bold text-blue-300 text-sm mb-1">Service Impact</h3>
-                                <p class="text-gray-300 text-sm">
-                                    Elevators may be <strong>temporarily out of service</strong> during testing (approx. 30–60 mins per elevator).
-                                </p>
-                            </div>
-                        </div>
+                    <div class="lg:col-span-2 bg-gray-700 text-gray-200 rounded-xl shadow-xl p-5 border-l-4 border-blue-500">
+                        <h2 class="text-xl font-bold text-white mb-2">Scheduled Elevator Inspection</h2>
+                        <p class="text-base leading-snug mb-2">The state inspection is scheduled for <strong>Tuesday, Feb 10th at 7:00 AM</strong>.</p>
+                        <div class="bg-gray-800 p-3 rounded-lg border border-gray-600"><p class="text-gray-300 text-sm">Elevators may be <strong>temporarily out of service</strong> during testing (approx. 30–60 mins per elevator).</p></div>
                     </div>
-                    
-                    <!-- Portal Update Status -->
-                    <div class="bg-gray-700 text-gray-200 rounded-xl shadow-xl p-5 transform transition-transform hover:scale-105 flex flex-col items-center justify-center text-center opacity-90">
-                        <div class="bg-emerald-600 text-white rounded-full p-3 mb-2">
-                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
+                    <div class="bg-gray-700 text-gray-200 rounded-xl shadow-xl p-5 text-center opacity-90">
+                        <div class="bg-emerald-600 text-white rounded-full p-3 mb-2 inline-block"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
                         <h2 class="text-xl font-bold text-white mb-1">Portal Active</h2>
-                        <p class="text-sm text-gray-300 mb-2">Vantaca is Live</p>
                         <p class="text-xs text-emerald-400 font-bold uppercase">See Previous Slide for Info</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 3: Gateway Events (Moved to Last) -->
-        <div id="slide-3" class="slide-container">
-            <div class="h-full flex flex-col">
-                <div class="flex justify-between items-center mb-4 px-2">
-                     <h2 class="text-3xl font-bold text-pink-500 border-b-4 border-pink-500 pb-1">Happening at The Gateway</h2>
-                     <div class="text-right">
-                        <p class="text-sm text-gray-400">Live Updates</p>
-                     </div>
-                </div>
-                
-                <!-- Events Grid (Content populated by JS) -->
-                <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow pb-2">
-                    <!-- Fallback if JSON fails to load -->
-                    <div class="col-span-2 flex flex-col items-center justify-center bg-gray-700 rounded-xl p-8 border border-gray-600">
-                        <p class="text-xl mb-4">Loading upcoming events...</p>
-                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-pink-500"></div>
                     </div>
                 </div>
             </div>
@@ -234,110 +157,91 @@
 
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white text-center p-3 z-20 flex-shrink-0">
-        <p class="font-medium text-base">
-            <span id="current-date"></span> &bull; Have a wonderful day!
-        </p>
-        <!-- 3 Dots for 3 Slides -->
+        <p class="font-medium text-base"><span id="current-date"></span> &bull; Have a wonderful day!</p>
         <div class="flex justify-center gap-2 mt-1">
             <div id="dot-1" class="w-2 h-2 rounded-full bg-white transition-all duration-300"></div>
             <div id="dot-2" class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300"></div>
             <div id="dot-3" class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300"></div>
+            <div id="dot-4" class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300"></div>
         </div>
     </footer>
 
-    <!-- Logic: Date & Refresh -->
+    <!-- Logic -->
     <script>
         function updateDate() {
-            const dateElement = document.getElementById('current-date');
-            if (dateElement) {
-                const today = new Date();
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Denver' };
-                dateElement.textContent = new Intl.DateTimeFormat('en-US', options).format(today);
-            }
+            const today = new Date();
+            document.getElementById('current-date').textContent = new Intl.DateTimeFormat('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Denver' }).format(today);
         }
-        updateDate();
-        setInterval(updateDate, 60000); // Check every minute
-        
-        // Refresh page every 1 hour to pick up new json content
-        setTimeout(function() { window.location.reload(true); }, 60 * 60 * 1000);
-    </script>
+        setInterval(updateDate, 60000); updateDate();
+        setTimeout(function() { window.location.reload(true); }, 3600000); // 1 hour refresh
 
-    <!-- Logic: Gateway Events Fetcher -->
-    <script>
-        async function loadEvents() {
+        // --- FETCHERS ---
+        async function loadData() {
+            // Load Events
             try {
-                const response = await fetch('gateway_events.json');
-                if (!response.ok) throw new Error("JSON not found");
-                const events = await response.json();
-                
-                const grid = document.getElementById('events-grid');
-                grid.innerHTML = ''; // Clear placeholder
+                const eRes = await fetch('gateway_events.json');
+                if (eRes.ok) {
+                    const events = await eRes.json();
+                    const eGrid = document.getElementById('events-grid');
+                    eGrid.innerHTML = '';
+                    events.forEach(ev => {
+                        eGrid.innerHTML += `
+                        <div class="bg-gray-700 rounded-xl overflow-hidden shadow-lg border-l-4 border-pink-500 flex flex-col h-full">
+                            ${ev.image ? `<div class="h-40 w-full relative bg-gray-900 flex items-center justify-center overflow-hidden"><img src="${ev.image}" class="w-full h-full object-contain opacity-90"></div>` : ''}
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="text-lg font-bold text-white mb-1 line-clamp-1">${ev.title}</h3>
+                                <p class="text-pink-300 font-semibold text-xs mb-2 uppercase tracking-wide">${ev.date}</p>
+                                <p class="text-gray-300 text-sm leading-snug line-clamp-2">${ev.description}</p>
+                            </div>
+                        </div>`;
+                    });
+                }
+            } catch(e) { console.log(e); }
 
-                events.forEach(event => {
-                    const card = document.createElement('div');
-                    card.className = 'bg-gray-700 rounded-xl overflow-hidden shadow-lg border-l-4 border-pink-500 flex flex-col hover:bg-gray-600 transition-colors h-full';
-                    
-                    let imageHtml = '';
-                    if (event.image) {
-                        imageHtml = `
-                        <div class="h-40 w-full relative bg-gray-900 flex items-center justify-center overflow-hidden">
-                             <img src="${event.image}" class="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
-                        </div>
-                        `;
-                    } else {
-                        imageHtml = `
-                        <div class="h-24 w-full bg-gradient-to-r from-gray-700 to-gray-600 relative">
-                             <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-                        </div>
-                        `;
-                    }
-
-                    card.innerHTML = `
-                        ${imageHtml}
-                        <div class="p-4 flex flex-col flex-grow">
-                            <h3 class="text-lg font-bold text-white mb-1 line-clamp-1">${event.title}</h3>
-                            <p class="text-pink-300 font-semibold text-xs mb-2 uppercase tracking-wide">${event.date}</p>
-                            <p class="text-gray-300 text-sm leading-snug line-clamp-2">${event.description}</p>
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                });
-            } catch (err) {
-                console.log("Events fetch error:", err);
-                const grid = document.getElementById('events-grid');
-                grid.innerHTML = `
-                    <div class="col-span-2 flex flex-col items-center justify-center bg-gray-700 rounded-xl p-6 border border-gray-600">
-                        <p class="text-lg font-semibold text-white mb-2">View Full Calendar Online</p>
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://atthegateway.com/calendar/" class="w-24 h-24 rounded shadow mb-2">
-                        <p class="text-gray-400 text-sm">Scan to see what's happening</p>
-                    </div>
-                `;
+            // Load Movies
+            try {
+                const mRes = await fetch('movies.json');
+                if (mRes.ok) {
+                    const movies = await mRes.json();
+                    const mGrid = document.getElementById('movie-grid');
+                    mGrid.innerHTML = '';
+                    movies.slice(0, 6).forEach(m => { // Limit to 6
+                        const poster = m.poster ? m.poster : `https://placehold.co/400x600/333/fff?text=${encodeURIComponent(m.title)}`;
+                        mGrid.innerHTML += `
+                        <div class="bg-gray-700 rounded-lg overflow-hidden flex flex-col shadow-lg border border-gray-600 h-full">
+                            <div class="h-40 w-full relative">
+                                <img src="${poster}" class="w-full h-full object-cover">
+                                <span class="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded font-bold">${m.rating}</span>
+                            </div>
+                            <div class="p-3 flex flex-col flex-grow justify-between">
+                                <div>
+                                    <h3 class="font-bold text-white leading-tight mb-1 truncate">${m.title}</h3>
+                                    <p class="text-xs text-gray-400 mb-2">${m.genre}</p>
+                                </div>
+                                <div class="flex flex-wrap gap-1">
+                                    ${m.times.slice(0,3).map(t => `<span class="bg-red-900/50 text-red-200 px-1.5 py-0.5 rounded text-xs">${t}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>`;
+                    });
+                }
+            } catch(e) { 
+                document.getElementById('movie-grid').innerHTML = '<div class="col-span-3 text-center text-gray-500">Check Megaplex App for Showtimes</div>';
             }
         }
-        loadEvents();
-    </script>
+        loadData();
 
-    <!-- Logic: 3-Slide Rotation (Variable Timings) -->
-    <script>
-        // Define durations for each slide index (ms)
-        const SLIDE_DURATIONS = {
-            1: 45000, // Urgent Transition: 45 seconds
-            2: 30000, // Official Business: 30 seconds
-            3: 30000  // Gateway Events: 30 seconds
-        };
-        const DEFAULT_DURATION = 30000;
-
+        // --- SLIDES ---
+        const SLIDE_DURATIONS = { 1: 30000, 2: 30000, 3: 30000, 4: 30000 };
         let currentSlide = 1;
-        const totalSlides = 3;
+        const totalSlides = 4;
 
         function showSlide(slideNum) {
-            // Hide all slides
             for (let i = 1; i <= totalSlides; i++) {
                 const slide = document.getElementById(`slide-${i}`);
                 const dot = document.getElementById(`dot-${i}`);
-                
                 if (i === slideNum) {
                     slide.classList.add('slide-active');
                     dot.classList.replace('bg-gray-600', 'bg-white');
@@ -353,21 +257,12 @@
             let next = currentSlide + 1;
             if (next > totalSlides) next = 1;
             showSlide(next);
-            
-            // Schedule the NEXT rotation based on the NEW current slide
-            scheduleNextRotation();
+            setTimeout(nextSlide, SLIDE_DURATIONS[next] || 30000);
         }
-
-        function scheduleNextRotation() {
-            // Get duration for the slide we just showed
-            const duration = SLIDE_DURATIONS[currentSlide] || DEFAULT_DURATION;
-            setTimeout(nextSlide, duration);
-        }
-
-        // Initialize
-        showSlide(1); // Start with slide 1
-        scheduleNextRotation(); // Start the timer
+        
+        // Start loop
+        showSlide(1);
+        setTimeout(nextSlide, SLIDE_DURATIONS[1]);
     </script>
-
 </body>
 </html>
