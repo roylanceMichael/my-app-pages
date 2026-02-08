@@ -29,6 +29,9 @@ def slugify(text):
 
 def download_poster(img_url, title):
     """Downloads poster image and saves to local directory."""
+    if not img_url:
+        return None
+        
     if not os.path.exists(POSTER_DIR):
         os.makedirs(POSTER_DIR)
     
@@ -41,8 +44,7 @@ def download_poster(img_url, title):
 
     try:
         print(f"Downloading poster for {title}...")
-        # IMDB images might be resized; sometimes we can remove params for full size,
-        # but for thumbnails, the default is often fine.
+        # IMDB images might be resized; remove params for full size if needed, but default is fine
         r = requests.get(img_url, headers=HEADERS, timeout=10)
         if r.status_code == 200:
             with open(filepath, 'wb') as f:
@@ -52,6 +54,13 @@ def download_poster(img_url, title):
         print(f"Failed to download poster for {title}: {e}")
     
     return None
+
+def format_runtime(seconds):
+    if not seconds:
+        return ""
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    return f"{hours}h {minutes}m"
 
 def scrape_movies():
     print(f"Fetching showtimes from {IMDB_URL}...")
@@ -65,65 +74,69 @@ def scrape_movies():
     soup = BeautifulSoup(response.content, "html.parser")
     movies_data = []
     
-    # Select all movie containers
-    # IMDB structure varies; looking for generic 'list-item' or specific showtime classes
-    # Note: IMDB classes are often randomized/obfuscated (e.g., ipc-metadata-list).
-    # We will look for semantic structure.
-    
-    # Strategy: Find the main list
-    movie_list = soup.select(".ipc-metadata-list-summary-item")
-    
-    print(f"Found {len(movie_list)} movies.")
+    # Extract JSON blob from NEXT_DATA
+    data_tag = soup.find("script", id="__NEXT_DATA__")
+    if not data_tag:
+        print("Error: Could not find __NEXT_DATA__ script tag.")
+        return []
 
-    for item in movie_list:
-        try:
+    try:
+        json_data = json.loads(data_tag.string)
+        # Navigate to the relevant data
+        # props.pageProps.titleAndShowtimeData
+        titles_data = json_data.get("props", {}).get("pageProps", {}).get("titleAndShowtimeData", [])
+        
+        print(f"Found {len(titles_data)} movies in JSON data.")
+
+        for item in titles_data:
+            node = item.get("node", {})
+            title_obj = node.get("title", {})
+            
             # Title
-            title_tag = item.select_one(".ipc-title__text")
-            if not title_tag: continue
-            title = clean_text(title_tag.get_text())
+            title = title_obj.get("titleText", {}).get("text", "")
+            if not title:
+                continue
+
+            # Rating
+            rating_summary = title_obj.get("ratingsSummary", {})
+            rating_val = rating_summary.get("aggregateRating", "")
+            # Convert float to string if exists, else "NR"
+            rating_score = str(rating_val) if rating_val else "NR"
             
-            # Metadata (Rating, Runtime, Genre)
-            # Usually in a subtitle list
-            metadata_items = item.select(".ipc-inline-list__item")
-            rating = "NR"
-            runtime = ""
-            genre = ""
+            # Content Rating (MPAA)
+            cert = title_obj.get("certificate", {}).get("rating", "NR")
             
-            # Simple heuristic parsing of metadata
-            for meta in metadata_items:
-                text = clean_text(meta.get_text())
-                if text in ["R", "PG-13", "PG", "G", "NC-17"]:
-                    rating = text
-                elif "h" in text and "m" in text:
-                    runtime = text
-                elif not genre and len(text) > 3: # Assume first non-rating/non-time string is genre
-                    genre = text
+            # Runtime
+            runtime_secs = title_obj.get("runtime", {}).get("seconds")
+            runtime = format_runtime(runtime_secs)
+            
+            # Genres
+            genres_list = title_obj.get("titleGenres", {}).get("genres", [])
+            genre_text = ""
+            if genres_list:
+                # Take the first genre
+                genre_text = genres_list[0].get("genre", {}).get("text", "")
 
             # Poster
-            poster_url = ""
-            img_tag = item.select_one("img.ipc-image")
-            if img_tag:
-                poster_url = img_tag.get("src")
-                # Handle IMDB dynamic resizing URLs if needed
-                # URL often looks like: https://m.media-amazon.com/images/M/..._V1_QL75_UX140_CR0,0,140,207_.jpg
+            poster_url = title_obj.get("primaryImage", {}).get("url", "")
             
             # Showtimes
-            # Look for time buttons
-            showtime_tags = item.select(".showtime-button") # Class might vary, looking for button-like elements with times
-            # Fallback search for times if specific class not found
-            if not showtime_tags:
-                # Text search for patterns like "12:00 pm"
-                all_text = item.get_text()
-                # Advanced regex for times could go here, but let's try a selector approach first
-                # Often nested in a "showtimes" div
-                times_container = item.select_one("[data-testid='showtimes-list']")
-                if times_container:
-                    # extract just the times
-                    showtimes = [clean_text(t.get_text()) for t in times_container.find_all("span") if ":" in t.get_text()]
-                else:
-                    showtimes = []
-            else:
-                showtimes = [clean_text(t.get_text()) for t in showtime_tags]
+            showtimes = []
+            showtime_groups = title_obj.get("cinemaShowtimesByScreeningType", {}).get("edges", [])
+            for group in showtime_groups:
+                types = group.get("node", {}).get("showtimesByScreeningType", [])
+                for t in types:
+                    # We could distinguish "Standard", "3D" etc here if we wanted.
+                    # t['screeningType']['text'] e.g. "Standard"
+                    times = t.get("showtimes", [])
+                    for st in times:
+                        start_text = st.get("screeningStart", {}).get("text", "")
+                        if start_text:
+                            showtimes.append(start_text)
+            
+            # Sort showtimes? They usually come sorted.
+            # Deduplicate just in case
+            showtimes = sorted(list(set(showtimes)), key=lambda x: datetime_from_time_str(x))
 
             # Download Poster
             local_poster = ""
@@ -133,30 +146,40 @@ def scrape_movies():
             if title and showtimes:
                 movies_data.append({
                     "title": title,
-                    "rating": rating,
+                    "rating": cert, # Using Content Rating (PG-13) instead of score (6.6) for the board
+                    "score": rating_score, # Keeping score just in case we want it later
                     "runtime": runtime,
-                    "genre": genre,
-                    "times": showtimes[:5], # Limit to 5 times for space
+                    "genre": genre_text,
+                    "times": showtimes[:5], # Limit to 5 times
                     "poster": f"posters/{local_poster}" if local_poster else ""
                 })
-        except Exception as e:
-            print(f"Error parsing movie item: {e}")
-            continue
+
+    except Exception as e:
+        print(f"Error parsing JSON data: {e}")
+        return []
 
     # Cleanup Old Posters
-    # Get list of current poster filenames
-    current_posters = [m["poster"].split('/')[-1] for m in movies_data if m["poster"]]
+    # Only run cleanup if we actually found movies (safety check)
+    if len(movies_data) > 0:
+        current_posters = [m["poster"].split('/')[-1] for m in movies_data if m["poster"]]
+        
+        if os.path.exists(POSTER_DIR):
+            for f in os.listdir(POSTER_DIR):
+                if f not in current_posters:
+                    try:
+                        os.remove(os.path.join(POSTER_DIR, f))
+                        print(f"Removed old poster: {f}")
+                    except:
+                        pass
     
-    if os.path.exists(POSTER_DIR):
-        for f in os.listdir(POSTER_DIR):
-            if f not in current_posters:
-                try:
-                    os.remove(os.path.join(POSTER_DIR, f))
-                    print(f"Removed old poster: {f}")
-                except:
-                    pass
-
     return movies_data
+
+def datetime_from_time_str(time_str):
+    from datetime import datetime
+    try:
+        return datetime.strptime(time_str, "%I:%M %p")
+    except:
+        return datetime.min
 
 def save_json(data):
     with open(OUTPUT_FILE, "w") as f:
@@ -165,9 +188,7 @@ def save_json(data):
 
 if __name__ == "__main__":
     movies = scrape_movies()
-    # Fallback data if scrape fails entirely (prevents empty board)
     if not movies:
-        print("Scrape returned 0 movies. Keeping existing data or creating placeholder.")
-        # Logic to handle empty scrape could go here
+        print("Scrape returned 0 movies.")
     else:
         save_json(movies)
