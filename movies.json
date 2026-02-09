@@ -1,5 +1,18 @@
 [
   {
+    "title": "The Housemaid",
+    "rating": "R",
+    "score": "6.9",
+    "runtime": "2h 11m",
+    "genre": "Drama",
+    "times": [
+      "12:20 PM",
+      "3:30 PM",
+      "9:40 PM"
+    ],
+    "poster": "posters/the-housemaid.jpg"
+  },
+  {
     "title": "Iron Lung",
     "rating": "R",
     "score": "6.6",
@@ -9,7 +22,8 @@
       "11:15 AM",
       "2:05 PM",
       "5:00 PM",
-      "7:50 PM"
+      "7:50 PM",
+      "8:35 PM"
     ],
     "poster": "posters/iron-lung.jpg"
   },
@@ -23,21 +37,10 @@
       "11:30 AM",
       "2:10 PM",
       "4:45 PM",
-      "7:20 PM"
+      "7:20 PM",
+      "10:00 PM"
     ],
     "poster": "posters/send-help.jpg"
-  },
-  {
-    "title": "The Housemaid",
-    "rating": "R",
-    "score": "6.9",
-    "runtime": "2h 11m",
-    "genre": "Drama",
-    "times": [
-      "12:20 PM",
-      "3:30 PM"
-    ],
-    "poster": "posters/the-housemaid.jpg"
   },
   {
     "title": "Marty Supreme",
@@ -48,35 +51,21 @@
     "times": [
       "11:45 AM",
       "3:00 PM",
-      "6:15 PM"
+      "6:15 PM",
+      "9:30 PM"
     ],
     "poster": "posters/marty-supreme.jpg"
   },
   {
-    "title": "Mercy",
-    "rating": "PG-13",
-    "score": "6.2",
-    "runtime": "1h 39m",
-    "genre": "Action",
-    "times": [
-      "11:35 AM",
-      "2:00 PM",
-      "4:25 PM"
-    ],
-    "poster": "posters/mercy.jpg"
-  },
-  {
-    "title": "The Moment",
+    "title": "Shelter",
     "rating": "R",
     "score": "6.5",
-    "runtime": "1h 43m",
-    "genre": "Comedy",
+    "runtime": "1h 47m",
+    "genre": "Action",
     "times": [
-      "1:30 PM",
-      "4:00 PM",
-      "6:30 PM"
+      "11:00 AM"
     ],
-    "poster": "posters/the-moment.jpg"
+    "poster": "posters/shelter.jpg"
   },
   {
     "title": "Solo Mio",
@@ -94,6 +83,20 @@
     "poster": "posters/solo-mio.jpg"
   },
   {
+    "title": "Mercy",
+    "rating": "PG-13",
+    "score": "6.2",
+    "runtime": "1h 39m",
+    "genre": "Action",
+    "times": [
+      "11:35 AM",
+      "2:00 PM",
+      "4:25 PM",
+      "6:50 PM"
+    ],
+    "poster": "posters/mercy.jpg"
+  },
+  {
     "title": "The Strangers: Chapter 3",
     "rating": "R",
     "score": "4.1",
@@ -103,9 +106,25 @@
       "12:00 PM",
       "2:15 PM",
       "4:30 PM",
-      "6:45 PM"
+      "6:45 PM",
+      "9:00 PM"
     ],
     "poster": "posters/the-strangers-chapter-3.jpg"
+  },
+  {
+    "title": "The Moment",
+    "rating": "R",
+    "score": "6.5",
+    "runtime": "1h 43m",
+    "genre": "Comedy",
+    "times": [
+      "11:00 AM",
+      "1:30 PM",
+      "4:00 PM",
+      "6:30 PM",
+      "9:00 PM"
+    ],
+    "poster": "posters/the-moment.jpg"
   },
   {
     "title": "The Hunger Games: Mockingjay - Part 2",
