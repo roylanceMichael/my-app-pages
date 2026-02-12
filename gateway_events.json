@@ -1,18 +1,6 @@
 [
   {
     "title": "Flanker Winter Games",
-    "date": "February 11 @ 5:00 pm - 11:00 pm",
-    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
-  },
-  {
-    "title": "Be Ours at Le Salone\u2019s Valentines\u2019 Day Salon at Asher Adams Hotel",
-    "date": "February 11 @ 7:00 pm - 9:00 pm",
-    "description": "Enjoy classical music from world-class musicians, hors d'oeuvres, and more!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/02/Le-Salon-de-Musique.jpg"
-  },
-  {
-    "title": "Flanker Winter Games",
     "date": "February 12 @ 5:00 pm - 11:00 pm",
     "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
@@ -52,5 +40,17 @@
     "date": "February 14 @ 6:00 pm - 9:00 pm",
     "description": "Enjoy a fun night out to learn about art appropriation techniques!",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/Feb-14-UAG.png"
+  },
+  {
+    "title": "Carver Louis Presents Country Cover for Country Lovers",
+    "date": "February 14 @ 10:00 pm - February 15 @ 1:00 am",
+    "description": "Enjoy the official after-party for Carver Louis at Flanker in the Hidden Boot Saloon!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/02/Carver-Louis-Presents-Country-Covers-For-Country-Lovers-jpeg.jpeg"
+  },
+  {
+    "title": "Bohemian Bum Farmer\u2019s Market",
+    "date": "February 15 @ 10:00 am - 3:00 pm",
+    "description": "Join us for a treasure trove of unique goods, delectable treats, and a warm, welcoming atmosphere!",
+    "image": "https://atthegateway.com/wp-content/uploads/2019/02/Bohemian-Bum-Farmers-Market-2024.jpg"
   }
 ]
