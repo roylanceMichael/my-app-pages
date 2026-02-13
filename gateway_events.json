@@ -1,11 +1,5 @@
 [
   {
-    "title": "Flanker Winter Games",
-    "date": "February 12 @ 5:00 pm - 11:00 pm",
-    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
-  },
-  {
     "title": "Galentine\u2019s Day at Flanker",
     "date": "February 13 @ 5:00 pm - 10:00 pm",
     "description": "Enjoy the perfect Galentine's celebration at Flanker!",
@@ -52,5 +46,11 @@
     "date": "February 15 @ 10:00 am - 3:00 pm",
     "description": "Join us for a treasure trove of unique goods, delectable treats, and a warm, welcoming atmosphere!",
     "image": "https://atthegateway.com/wp-content/uploads/2019/02/Bohemian-Bum-Farmers-Market-2024.jpg"
+  },
+  {
+    "title": "Flanker Winter Games",
+    "date": "February 15 @ 5:00 pm - 11:00 pm",
+    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
   }
 ]

@@ -6,20 +6,20 @@
     "runtime": "2h 11m",
     "genre": "Drama",
     "times": [
-      "11:00 AM"
+      "3:20 PM"
     ],
     "poster": "posters/the-housemaid.jpg"
   },
   {
     "title": "Iron Lung",
     "rating": "R",
-    "score": "6.6",
+    "score": "6.5",
     "runtime": "2h 5m",
     "genre": "Horror",
     "times": [
-      "1:10 PM",
-      "4:05 PM",
-      "9:20 PM"
+      "4:40 PM",
+      "9:10 PM",
+      "10:00 PM"
     ],
     "poster": "posters/iron-lung.jpg"
   },
@@ -30,37 +30,36 @@
     "runtime": "1h 53m",
     "genre": "Adventure",
     "times": [
-      "11:30 AM",
-      "2:10 PM",
-      "4:45 PM",
-      "7:20 PM",
-      "10:00 PM"
+      "12:00 PM",
+      "1:00 PM",
+      "6:20 PM",
+      "9:35 PM"
     ],
     "poster": "posters/send-help.jpg"
   },
   {
     "title": "Wuthering Heights",
     "rating": "R",
-    "score": "6.1",
+    "score": "6.3",
     "runtime": "2h 16m",
     "genre": "Drama",
     "times": [
-      "3:00 PM",
-      "6:15 PM",
+      "12:20 PM",
+      "1:35 PM",
+      "3:40 PM",
       "7:00 PM",
-      "9:35 PM"
+      "7:30 PM"
     ],
     "poster": "posters/wuthering-heights.jpg"
   },
   {
     "title": "Marty Supreme",
     "rating": "R",
-    "score": "8.1",
+    "score": "8",
     "runtime": "2h 29m",
     "genre": "Drama",
     "times": [
-      "11:40 AM",
-      "12:55 PM"
+      "12:45 PM"
     ],
     "poster": "posters/marty-supreme.jpg"
   },
@@ -80,43 +79,30 @@
     "poster": "posters/solo-mio.jpg"
   },
   {
-    "title": "Mercy",
-    "rating": "PG-13",
-    "score": "6.2",
-    "runtime": "1h 39m",
-    "genre": "Action",
-    "times": [
-      "11:35 AM",
-      "2:00 PM",
-      "4:25 PM",
-      "6:50 PM"
-    ],
-    "poster": "posters/mercy.jpg"
-  },
-  {
     "title": "GOAT",
     "rating": "PG",
-    "score": "7",
+    "score": "6.7",
     "runtime": "1h 40m",
     "genre": "Animation",
     "times": [
-      "2:00 PM",
-      "4:30 PM",
-      "7:00 PM",
-      "9:30 PM"
+      "1:25 PM",
+      "3:50 PM",
+      "6:20 PM",
+      "8:45 PM"
     ],
     "poster": "posters/goat.jpg"
   },
   {
     "title": "Crime 101",
     "rating": "R",
-    "score": "NR",
+    "score": "7.1",
     "runtime": "2h 19m",
     "genre": "Crime",
     "times": [
+      "1:00 PM",
       "4:00 PM",
       "7:05 PM",
-      "10:00 PM"
+      "10:10 PM"
     ],
     "poster": "posters/crime-101.jpg"
   },
@@ -127,11 +113,8 @@
     "runtime": "1h 31m",
     "genre": "Horror",
     "times": [
-      "12:00 PM",
-      "2:15 PM",
-      "4:30 PM",
-      "6:45 PM",
-      "9:00 PM"
+      "1:00 PM",
+      "10:30 PM"
     ],
     "poster": "posters/the-strangers-chapter-3.jpg"
   },
@@ -142,12 +125,33 @@
     "runtime": "1h 43m",
     "genre": "Comedy",
     "times": [
-      "11:00 AM",
-      "1:30 PM",
-      "4:00 PM",
-      "6:30 PM",
-      "9:00 PM"
+      "4:15 PM",
+      "6:45 PM",
+      "9:15 PM"
     ],
     "poster": "posters/the-moment.jpg"
+  },
+  {
+    "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "rating": "PG-13",
+    "score": "8.1",
+    "runtime": "2h 23m",
+    "genre": "Action",
+    "times": [
+      "3:00 PM",
+      "6:15 PM"
+    ],
+    "poster": "posters/pirates-of-the-caribbean-the-curse-of-the-black-pearl.jpg"
+  },
+  {
+    "title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+    "rating": "PG-13",
+    "score": "6.6",
+    "runtime": "2h 37m",
+    "genre": "Action",
+    "times": [
+      "6:30 PM"
+    ],
+    "poster": "posters/the-hunger-games-the-ballad-of-songbirds-snakes.jpg"
   }
 ]
