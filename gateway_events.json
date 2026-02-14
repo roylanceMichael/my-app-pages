@@ -1,17 +1,5 @@
 [
   {
-    "title": "Galentine\u2019s Day at Flanker",
-    "date": "February 13 @ 5:00 pm - 10:00 pm",
-    "description": "Enjoy the perfect Galentine's celebration at Flanker!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/02/Galentines-Day-Gateway.jpeg"
-  },
-  {
-    "title": "Flanker Winter Games",
-    "date": "February 13 @ 5:00 pm - 11:00 pm",
-    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
-  },
-  {
     "title": "Pilates is For Lovers at Asher Adams Hotel",
     "date": "February 14 @ 11:00 am - 12:00 pm",
     "description": "Enjoy free mat pilates at the Asher Adams hotel on Valentine's Day! Just bring a mat and a friend...",
@@ -50,6 +38,18 @@
   {
     "title": "Flanker Winter Games",
     "date": "February 15 @ 5:00 pm - 11:00 pm",
+    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
+  },
+  {
+    "title": "Flanker Winter Games",
+    "date": "February 16 @ 5:00 pm - 11:00 pm",
+    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
+  },
+  {
+    "title": "Flanker Winter Games",
+    "date": "February 17 @ 5:00 pm - 11:00 pm",
     "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
   }
