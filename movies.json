@@ -6,7 +6,7 @@
     "runtime": "2h 11m",
     "genre": "Drama",
     "times": [
-      "2:35 PM"
+      "2:45 PM"
     ],
     "poster": "posters/the-housemaid.jpg"
   },
@@ -29,25 +29,25 @@
     "runtime": "1h 53m",
     "genre": "Adventure",
     "times": [
-      "12:50 PM",
-      "3:40 PM",
+      "1:50 PM",
+      "4:30 PM",
       "7:15 PM",
-      "9:00 PM"
+      "10:00 PM"
     ],
     "poster": "posters/send-help.jpg"
   },
   {
     "title": "Wuthering Heights",
     "rating": "R",
-    "score": "6.3",
+    "score": "6.4",
     "runtime": "2h 16m",
     "genre": "Drama",
     "times": [
-      "11:00 AM",
+      "11:35 AM",
       "12:20 PM",
-      "2:00 PM",
+      "3:00 PM",
       "3:40 PM",
-      "6:30 PM"
+      "6:00 PM"
     ],
     "poster": "posters/wuthering-heights.jpg"
   },
@@ -58,8 +58,8 @@
     "runtime": "2h 29m",
     "genre": "Drama",
     "times": [
-      "11:10 AM",
-      "12:10 PM"
+      "11:25 AM",
+      "1:00 PM"
     ],
     "poster": "posters/marty-supreme.jpg"
   },
@@ -73,22 +73,22 @@
       "12:25 PM",
       "2:50 PM",
       "5:15 PM",
-      "7:40 PM",
-      "10:05 PM"
+      "7:40 PM"
     ],
     "poster": "posters/solo-mio.jpg"
   },
   {
     "title": "GOAT",
     "rating": "PG",
-    "score": "6.9",
+    "score": "7",
     "runtime": "1h 40m",
     "genre": "Animation",
     "times": [
       "11:00 AM",
       "1:25 PM",
       "3:50 PM",
-      "6:20 PM"
+      "6:20 PM",
+      "8:45 PM"
     ],
     "poster": "posters/goat.jpg"
   },
@@ -113,8 +113,8 @@
     "runtime": "1h 31m",
     "genre": "Horror",
     "times": [
-      "5:00 PM",
-      "10:00 PM"
+      "11:25 AM",
+      "10:05 PM"
     ],
     "poster": "posters/the-strangers-chapter-3.jpg"
   },
@@ -125,31 +125,21 @@
     "runtime": "1h 43m",
     "genre": "Comedy",
     "times": [
+      "4:15 PM",
       "6:45 PM",
       "9:15 PM"
     ],
     "poster": "posters/the-moment.jpg"
   },
   {
-    "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "title": "The Hunger Games: The Ballad of Songbirds & Snakes",
     "rating": "PG-13",
-    "score": "8.1",
-    "runtime": "2h 23m",
+    "score": "6.6",
+    "runtime": "2h 37m",
     "genre": "Action",
     "times": [
-      "5:50 PM"
+      "6:30 PM"
     ],
-    "poster": "posters/pirates-of-the-caribbean-the-curse-of-the-black-pearl.jpg"
-  },
-  {
-    "title": "I Can Only Imagine 2",
-    "rating": "PG",
-    "score": "NR",
-    "runtime": "1h 50m",
-    "genre": "Drama",
-    "times": [
-      "3:55 PM"
-    ],
-    "poster": "posters/i-can-only-imagine-2.jpg"
+    "poster": "posters/the-hunger-games-the-ballad-of-songbirds-snakes.jpg"
   }
 ]

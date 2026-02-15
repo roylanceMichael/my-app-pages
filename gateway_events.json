@@ -1,35 +1,5 @@
 [
   {
-    "title": "Pilates is For Lovers at Asher Adams Hotel",
-    "date": "February 14 @ 11:00 am - 12:00 pm",
-    "description": "Enjoy free mat pilates at the Asher Adams hotel on Valentine's Day! Just bring a mat and a friend...",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/02/Pilates-is-for-Lovers.jpg"
-  },
-  {
-    "title": "Flanker Winter Games",
-    "date": "February 14 @ 5:00 pm - 11:00 pm",
-    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
-  },
-  {
-    "title": "Valentine\u2019s Day at Flanker",
-    "date": "February 14 @ 5:00 pm - 11:30 pm",
-    "description": "Celebrate Valentine's at Flanker with delicious food and drinks and a romantic vibe that lasts al...",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/960x640-Flanker-Valentines.jpg"
-  },
-  {
-    "title": "Paint Night at Urban Arts Gallery: Art Appropriation",
-    "date": "February 14 @ 6:00 pm - 9:00 pm",
-    "description": "Enjoy a fun night out to learn about art appropriation techniques!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Feb-14-UAG.png"
-  },
-  {
-    "title": "Carver Louis Presents Country Cover for Country Lovers",
-    "date": "February 14 @ 10:00 pm - February 15 @ 1:00 am",
-    "description": "Enjoy the official after-party for Carver Louis at Flanker in the Hidden Boot Saloon!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/02/Carver-Louis-Presents-Country-Covers-For-Country-Lovers-jpeg.jpeg"
-  },
-  {
     "title": "Bohemian Bum Farmer\u2019s Market",
     "date": "February 15 @ 10:00 am - 3:00 pm",
     "description": "Join us for a treasure trove of unique goods, delectable treats, and a warm, welcoming atmosphere!",
@@ -52,5 +22,35 @@
     "date": "February 17 @ 5:00 pm - 11:00 pm",
     "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
+  },
+  {
+    "title": "Yoga & Beer",
+    "date": "February 17 @ 6:00 pm - 7:00 pm",
+    "description": "Move and stretch your body with us at this FREE weekly yoga class!",
+    "image": "https://atthegateway.com/wp-content/uploads/2025/12/Yoga-Beer-2026-Event.png"
+  },
+  {
+    "title": "Flanker Winter Games",
+    "date": "February 18 @ 5:00 pm - 11:00 pm",
+    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
+  },
+  {
+    "title": "Grow: A Critique Group for Artists",
+    "date": "February 18 @ 6:30 pm - 8:30 pm",
+    "description": "Join this free event for artists of all backgrounds to network and work together!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/02/Grow-UAG.png"
+  },
+  {
+    "title": "Flanker Winter Games",
+    "date": "February 19 @ 5:00 pm - 11:00 pm",
+    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
+  },
+  {
+    "title": "She Kills Monsters at MadKing\u2019s Fellowship Theater",
+    "date": "February 19 @ 7:30 pm - 9:30 pm",
+    "description": "Come to Madking Theater to experience an epic play full of battles, nerdy nostalgia, and a whole ...",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/02/She-Kills-Monsters-Social-Media.png"
   }
 ]
