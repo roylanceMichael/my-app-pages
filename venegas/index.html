@@ -6,6 +6,11 @@
     <title>Venegas Home Cleaning Co. | SLC & Park City</title>
     <meta name="description" content="Licensed and Insured cleaning services for Salt Lake City and Park City. Residential, Deep Cleans, and Vacation Rental Turnovers.">
     
+    <meta property="og:image" content="./venegas_logo.jpg">
+    <meta property="og:title" content="Venegas Home Cleaning Co.">
+    
+    <link rel="icon" type="image/jpeg" href="./venegas_logo.jpg">
+
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,25 +41,24 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
 
-    <nav class="bg-white border-b border-slate-100 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+    <nav class="bg-white border-b border-slate-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 h-24 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <div class="font-serif text-2xl font-bold text-slate-900 tracking-tight">
-                    VENEGAS <span class="text-blue-600">Home Cleaning</span>
-                </div>
+                <a href="#">
+                    <img src="./venegas_logo.jpg" alt="Venegas Home Cleaning Co." class="h-20 w-auto object-contain py-2">
+                </a>
             </div>
             
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
                 <a href="#services" class="hover:text-blue-600 transition">Services</a>
                 <a href="#pricing" class="hover:text-blue-600 transition">Pricing</a>
-                <a href="#about" class="hover:text-blue-600 transition">About Us</a>
                 <a href="#contact" class="px-5 py-2.5 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition shadow-lg shadow-slate-900/20">
                     Get a Quote
                 </a>
             </div>
         </div>
     </nav>
-
+    
     <header class="relative bg-slate-900 text-white overflow-hidden">
         <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1581578731117-104f2a41272c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
         
@@ -84,38 +88,56 @@
     </header>
 
     <section id="services" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900 mb-4">Cleaning done right.</h2>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900 mb-4">Complete Cleaning Solutions.</h2>
                 <p class="text-slate-600 max-w-xl mx-auto">
-                    We don't just "wipe down" surfaces. We deep clean tailored to your lifestyle, whether you're a busy parent or a property manager.
+                    From cozy condos to construction sites, we have the specialized equipment and teams for every job.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition group hover:shadow-lg">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:shadow-lg transition group">
                     <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="star" class="w-6 h-6"></i>
+                        <i data-lucide="home" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-slate-900 mb-3">Standard Residential</h3>
-                    <p class="text-slate-600 leading-relaxed">Weekly or bi-weekly upkeep to keep your home fresh. Kitchens, bathrooms, floors, and dusting.</p>
+                    <h3 class="font-serif text-lg font-bold text-slate-900 mb-3">Residential Cleaning</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Private homes, apartments, and condos. We handle recurring upkeep, one-time deep cleans, and detailed move-in/move-out services.
+                    </p>
                 </div>
                 
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition group hover:shadow-lg">
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:shadow-lg transition group">
                     <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="check-circle" class="w-6 h-6"></i>
+                        <i data-lucide="plane" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-slate-900 mb-3">Move-In / Move-Out</h3>
-                    <p class="text-slate-600 leading-relaxed">Deep cleaning for empty homes. Perfect for renters looking to get deposits back and landlords preparing for tenants.</p>
+                    <h3 class="font-serif text-lg font-bold text-slate-900 mb-3">Airbnb & Vacation Rentals</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Reliable turnovers for Park City & SLC hosts. We follow specific checklists, manage linens, and ensure 5-star guest readiness.
+                    </p>
                 </div>
                 
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition group hover:shadow-lg">
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:shadow-lg transition group">
                     <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        <i data-lucide="building-2" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-slate-900 mb-3">Vacation Rentals</h3>
-                    <p class="text-slate-600 leading-relaxed">Specialized turnover service for Park City & SLC Airbnb hosts. Linen changing, restocking, and rapid turnaround.</p>
+                    <h3 class="font-serif text-lg font-bold text-slate-900 mb-3">Commercial & Office</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Janitorial services for offices and small businesses. Keep your workspace professional, sanitary, and welcoming for clients.
+                    </p>
                 </div>
+
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:shadow-lg transition group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition">
+                        <i data-lucide="hammer" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-slate-900 mb-3">Post-Construction</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Final cleanup for renovations and new builds. We remove fine dust, paint splatter, and debris so the space is move-in ready.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
