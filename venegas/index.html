@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venegas Home Cleaning Co. | SLC & Park City</title>
+    <meta name="description" content="Licensed and Insured cleaning services for Salt Lake City and Park City. Residential, Deep Cleans, and Vacation Rental Turnovers.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0f172a',  /* Matches Logo */
+                            gold: '#D4AF37',  /* Premium Accent */
+                            blue: '#3b82f6',  /* Friendly Accent */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <nav class="bg-white border-b border-slate-100 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="font-serif text-2xl font-bold text-slate-900 tracking-tight">
+                    VENEGAS <span class="text-blue-600">Home Cleaning</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#pricing" class="hover:text-blue-600 transition">Pricing</a>
+                <a href="#about" class="hover:text-blue-600 transition">About Us</a>
+                <a href="#contact" class="px-5 py-2.5 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition shadow-lg shadow-slate-900/20">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative bg-slate-900 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1581578731117-104f2a41272c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 py-24 md:py-32 relative z-10">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-100 text-sm mb-6 font-medium">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    <span>Licensed & Insured in SLC & Park City</span>
+                </div>
+                
+                <h1 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Expert cleaning. <br />
+                    <span class="text-blue-400">Neighborly care.</span>
+                </h1>
+                
+                <p class="text-lg text-slate-300 mb-8 max-w-lg leading-relaxed">
+                    From downtown condos to Park City rentals, we bring a professional touch to your home. Reliable, thorough, and locally owned.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition text-center shadow-lg shadow-blue-900/50">
+                        Get Your Free Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900 mb-4">Cleaning done right.</h2>
+                <p class="text-slate-600 max-w-xl mx-auto">
+                    We don't just "wipe down" surfaces. We deep clean tailored to your lifestyle, whether you're a busy parent or a property manager.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition group hover:shadow-lg">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition">
+                        <i data-lucide="star" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-slate-900 mb-3">Standard Residential</h3>
+                    <p class="text-slate-600 leading-relaxed">Weekly or bi-weekly upkeep to keep your home fresh. Kitchens, bathrooms, floors, and dusting.</p>
+                </div>
+                
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition group hover:shadow-lg">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition">
+                        <i data-lucide="check-circle" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-slate-900 mb-3">Move-In / Move-Out</h3>
+                    <p class="text-slate-600 leading-relaxed">Deep cleaning for empty homes. Perfect for renters looking to get deposits back and landlords preparing for tenants.</p>
+                </div>
+                
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition group hover:shadow-lg">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-slate-900 mb-3">Vacation Rentals</h3>
+                    <p class="text-slate-600 leading-relaxed">Specialized turnover service for Park City & SLC Airbnb hosts. Linen changing, restocking, and rapid turnaround.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="md:w-1/2">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6">Simple, transparent pricing.</h2>
+                <p class="text-slate-400 text-lg mb-8">
+                    No hidden fees or surprise upcharges. We believe in honest work for an honest price.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="text-blue-400 w-5 h-5"></i>
+                        <span>Licensed and Insured (EIN on file)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="text-blue-400 w-5 h-5"></i>
+                        <span>All Professional Supplies Included</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle" class="text-blue-400 w-5 h-5"></i>
+                        <span>Satisfaction Guarantee</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="md:w-1/2 max-w-md w-full">
+                <div class="bg-white text-slate-900 p-8 rounded-2xl shadow-2xl transform md:rotate-2 hover:rotate-0 transition duration-300">
+                    <div class="text-center border-b border-slate-100 pb-6 mb-6">
+                        <p class="text-slate-500 font-medium mb-2">Standard Clean Starting At</p>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span class="text-5xl font-bold text-slate-900">$150</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-2">For a typical 2 Bed / 2 Bath Home</p>
+                    </div>
+                    <div class="space-y-4">
+                        <p class="text-center text-slate-600 text-sm">
+                            Have a larger home or need a deep clean? 
+                        </p>
+                        <a href="#contact" class="block w-full py-4 bg-slate-900 text-white text-center rounded-lg font-bold hover:bg-slate-800 transition">
+                            Request Custom Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i data-lucide="star" class="text-yellow-400 fill-current w-8 h-8 mx-auto mb-6"></i>
+            <blockquote class="font-serif text-2xl md:text-3xl font-medium text-slate-900 leading-normal mb-8">
+                "We used Venegas Home Cleaning for our carpets and general cleaning, and it truly did wonders. Professional, on time, and the results spoke for themselves."
+            </blockquote>
+            <cite class="not-italic">
+                <div class="font-bold text-slate-900">Mike Roylance</div>
+                <div class="text-slate-500 text-sm">Salt Lake City Resident</div>
+            </cite>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="font-serif text-3xl font-bold text-slate-900">Let's get your home sparkling.</h2>
+                <p class="text-slate-600 mt-2">Fill out the form below and we'll text or email you a quote shortly.</p>
+            </div>
+
+            <form action="https://formspree.io/f/mqkenwlw" method="POST" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                        <input type="text" name="firstName" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" placeholder="Jane" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                        <input type="text" name="lastName" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" placeholder="Doe" />
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                    <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" placeholder="jane@example.com" />
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Property Location</label>
+                    <select name="location" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition bg-white">
+                        <option value="SLC">Salt Lake City Area</option>
+                        <option value="ParkCity">Park City Area</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">What do you need help with?</label>
+                    <textarea name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" placeholder="e.g. 3 bedroom house, deep clean needed..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-600/20">
+                    Send Request
+                </button>
+                <p className="text-xs text-center text-slate-400 mt-4">
+                    No payment required yet. We'll contact you to confirm details.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <div class="font-serif text-xl font-bold text-white mb-2">VENEGAS</div>
+                <p className="text-sm">© <script>document.write(new Date().getFullYear())</script> Venegas Home Cleaning Co.</p>
+                <p class="text-xs mt-1">Licensed & Insured in Utah.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="mailto:contact@venegascleaning.com" class="hover:text-white transition flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i> Contact Support
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
