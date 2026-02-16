@@ -117,7 +117,7 @@
         <div id="slide-3" class="slide-container">
             <div class="h-full flex flex-col gap-4">
                 <!-- Movie Grid -->
-                <div id="movie-grid" class="flex-grow grid grid-cols-3 lg:grid-cols-4 gap-4 content-start overflow-y-auto w-full">
+                <div id="movie-grid" class="flex-grow grid grid-cols-2 md:grid-cols-3 gap-6 content-start overflow-y-auto w-full">
                     <!-- Movie Cards Injected via JS -->
                     <div class="col-span-3 text-center text-gray-400 mt-10">Loading Movies...</div>
                 </div>
@@ -230,17 +230,17 @@
                         const poster = m.poster ? m.poster : `https://placehold.co/400x600/333/fff?text=${encodeURIComponent(m.title)}`;
                         mGrid.innerHTML += `
                         <div class="bg-gray-700 rounded-lg overflow-hidden flex flex-col shadow-lg border border-gray-600 h-full">
-                            <div class="h-40 w-full relative">
+                            <div class="h-48 w-full relative">
                                 <img src="${poster}" loading="lazy" class="w-full h-full object-cover">
                                 <span class="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded font-bold">${m.rating}</span>
                             </div>
-                            <div class="p-3 flex flex-col flex-grow justify-between">
-                                <div>
-                                    <h3 class="font-bold text-white leading-tight mb-1 truncate">${m.title}</h3>
-                                    <p class="text-xs text-gray-400 mb-2">${m.genre}</p>
+                            <div class="p-4 flex flex-col flex-grow justify-between">
+                                <div class="mb-2">
+                                    <h3 class="font-bold text-xl text-white leading-tight mb-1 line-clamp-1">${m.title}</h3>
+                                    <p class="text-sm text-gray-400 font-medium">${m.genre}</p>
                                 </div>
-                                <div class="flex flex-wrap gap-1">
-                                    ${m.times.slice(0,3).map(t => `<span class="bg-red-900/50 text-red-200 px-1.5 py-0.5 rounded text-xs">${t}</span>`).join('')}
+                                <div class="flex flex-wrap gap-2">
+                                    ${m.times.slice(0,6).map(t => `<span class="bg-red-900/60 text-red-100 px-2 py-1 rounded text-sm font-bold border border-red-800/50">${t}</span>`).join('')}
                                 </div>
                             </div>
                         </div>`;
