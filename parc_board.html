@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Parc Condominium Board</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -177,7 +178,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white text-center p-3 z-20 flex-shrink-0">
-        <p class="font-medium text-base"><span id="current-date"></span> &bull; Have a wonderful day!</p>
+        <p class="font-medium text-base"><span id="current-date"></span> &bull; Have a wonderful day! <span id="resolution" class="text-gray-500 text-xs ml-2"></span></p>
         <div class="flex justify-center gap-2 mt-1">
             <div id="dot-1" class="w-2 h-2 rounded-full bg-white transition-all duration-300"></div>
             <div id="dot-2" class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300"></div>
@@ -192,7 +193,9 @@
         function updateDate() {
             const today = new Date();
             document.getElementById('current-date').textContent = new Intl.DateTimeFormat('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Denver' }).format(today);
+            document.getElementById('resolution').textContent = `(${window.innerWidth}x${window.innerHeight})`;
         }
+        window.addEventListener('resize', updateDate);
         setInterval(updateDate, 60000); updateDate();
         setTimeout(function() { window.location.reload(true); }, 3600000); // 1 hour refresh
 
