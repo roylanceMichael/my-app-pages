@@ -1,17 +1,5 @@
 [
   {
-    "title": "Bohemian Bum Farmer\u2019s Market",
-    "date": "February 15 @ 10:00 am - 3:00 pm",
-    "description": "Join us for a treasure trove of unique goods, delectable treats, and a warm, welcoming atmosphere!",
-    "image": "https://atthegateway.com/wp-content/uploads/2019/02/Bohemian-Bum-Farmers-Market-2024.jpg"
-  },
-  {
-    "title": "Flanker Winter Games",
-    "date": "February 15 @ 5:00 pm - 11:00 pm",
-    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
-  },
-  {
     "title": "Flanker Winter Games",
     "date": "February 16 @ 5:00 pm - 11:00 pm",
     "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
@@ -52,5 +40,17 @@
     "date": "February 19 @ 7:30 pm - 9:30 pm",
     "description": "Come to Madking Theater to experience an epic play full of battles, nerdy nostalgia, and a whole ...",
     "image": "https://atthegateway.com/wp-content/uploads/2026/02/She-Kills-Monsters-Social-Media.png"
+  },
+  {
+    "title": "Flanker Winter Games",
+    "date": "February 20 @ 5:00 pm - 11:00 pm",
+    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
+  },
+  {
+    "title": "Art Stroll at The Gateway",
+    "date": "February 20 @ 6:00 pm - 9:00 pm",
+    "description": "Come to The Gateway to explore our new \"Winter After Dark\" themed windows throughout the property!",
+    "image": "https://atthegateway.com/wp-content/uploads/2025/10/Winter-After-Dark-Digital-Graphics_Home-block-1.png"
   }
 ]
