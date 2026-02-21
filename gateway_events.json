@@ -1,24 +1,6 @@
 [
   {
     "title": "Flanker Winter Games",
-    "date": "February 20 @ 5:00 pm - 11:00 pm",
-    "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
-  },
-  {
-    "title": "Art Stroll at The Gateway",
-    "date": "February 20 @ 6:00 pm - 9:00 pm",
-    "description": "Come to The Gateway to explore our new \"Winter After Dark\" themed windows throughout the property!",
-    "image": "https://atthegateway.com/wp-content/uploads/2025/10/Winter-After-Dark-Digital-Graphics_Home-block-1.png"
-  },
-  {
-    "title": "She Kills Monsters at MadKing\u2019s Fellowship Theater",
-    "date": "February 20 @ 7:30 pm - 9:30 pm",
-    "description": "Come to Madking Theater to experience an epic play full of battles, nerdy nostalgia, and a whole ...",
-    "image": "https://atthegateway.com/wp-content/uploads/2026/02/She-Kills-Monsters-Social-Media.png"
-  },
-  {
-    "title": "Flanker Winter Games",
     "date": "February 21 @ 5:00 pm - 11:00 pm",
     "description": "Watch the Winter Olympics at Flanker with all their specials and cocktails!",
     "image": "https://atthegateway.com/wp-content/uploads/2026/01/Flanker-Viewing-Party.jpg"
@@ -52,5 +34,23 @@
     "date": "February 22 @ 7:30 pm - 9:30 pm",
     "description": "Come to Madking Theater to experience an epic play full of battles, nerdy nostalgia, and a whole ...",
     "image": "https://atthegateway.com/wp-content/uploads/2026/02/She-Kills-Monsters-Social-Media.png"
+  },
+  {
+    "title": "Yoga & Beer",
+    "date": "February 24 @ 6:00 pm - 7:00 pm",
+    "description": "Move and stretch your body with us at this FREE weekly yoga class!",
+    "image": "https://atthegateway.com/wp-content/uploads/2025/12/Yoga-Beer-2026-Event.png"
+  },
+  {
+    "title": "She Kills Monsters at MadKing\u2019s Fellowship Theater",
+    "date": "February 26 @ 7:30 pm - 9:30 pm",
+    "description": "Come to Madking Theater to experience an epic play full of battles, nerdy nostalgia, and a whole ...",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/02/She-Kills-Monsters-Social-Media.png"
+  },
+  {
+    "title": "Utah Mammoth Facebook Group Hockey Nights",
+    "date": "February 27 @ 5:00 pm - 6:00 pm",
+    "description": "Come to Flanker for a watch party of Utah Mammoth!",
+    "image": "https://atthegateway.com/wp-content/uploads/2026/02/Uath_Mammoth_Fack_Book_Group.jpeg"
   }
 ]
