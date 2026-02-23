@@ -17,7 +17,7 @@
   {
     "title": "Crime 101",
     "rating": "R",
-    "score": "7.2",
+    "score": "7.1",
     "runtime": "2h 20m",
     "genre": "Crime",
     "times": [
@@ -27,6 +27,21 @@
       "9:05 PM"
     ],
     "poster": "posters/crime-101.jpg"
+  },
+  {
+    "title": "GOAT",
+    "rating": "PG",
+    "score": "6.9",
+    "runtime": "1h 40m",
+    "genre": "Animation",
+    "times": [
+      "11:00 AM",
+      "11:30 AM",
+      "1:25 PM",
+      "3:50 PM",
+      "6:20 PM"
+    ],
+    "poster": "posters/goat.jpg"
   },
   {
     "title": "Send Help",
@@ -43,19 +58,18 @@
     "poster": "posters/send-help.jpg"
   },
   {
-    "title": "GOAT",
-    "rating": "PG",
-    "score": "6.9",
-    "runtime": "1h 40m",
-    "genre": "Animation",
+    "title": "How to Make a Killing",
+    "rating": "R",
+    "score": "6.8",
+    "runtime": "1h 45m",
+    "genre": "Comedy",
     "times": [
-      "11:00 AM",
-      "11:30 AM",
-      "1:25 PM",
-      "3:50 PM",
-      "6:20 PM"
+      "1:45 PM",
+      "4:15 PM",
+      "6:45 PM",
+      "9:15 PM"
     ],
-    "poster": "posters/goat.jpg"
+    "poster": "posters/how-to-make-a-killing.jpg"
   },
   {
     "title": "Iron Lung",
@@ -84,23 +98,9 @@
     "poster": "posters/solo-mio.jpg"
   },
   {
-    "title": "How to Make a Killing",
-    "rating": "R",
-    "score": "6.8",
-    "runtime": "1h 45m",
-    "genre": "Comedy",
-    "times": [
-      "1:45 PM",
-      "4:15 PM",
-      "6:45 PM",
-      "9:15 PM"
-    ],
-    "poster": "posters/how-to-make-a-killing.jpg"
-  },
-  {
     "title": "I Can Only Imagine 2",
     "rating": "PG",
-    "score": "7.9",
+    "score": "7.7",
     "runtime": "1h 50m",
     "genre": "Drama",
     "times": [
