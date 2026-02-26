@@ -118,7 +118,7 @@
         <div id="slide-3" class="slide-container">
             <div class="h-full flex flex-col gap-4">
                 <!-- Movie Grid -->
-                <div id="movie-grid" class="flex-grow grid grid-cols-3 gap-3 content-start overflow-hidden w-full">
+                <div id="movie-grid" class="flex-grow grid grid-cols-4 gap-2 content-start overflow-hidden w-full">
                     <!-- Movie Cards Injected via JS -->
                     <div class="col-span-3 text-center text-gray-400 mt-10">Loading Movies...</div>
                 </div>
@@ -233,24 +233,24 @@
                     const movies = await mRes.json();
                     const mGrid = document.getElementById('movie-grid');
                     mGrid.innerHTML = '';
-                    movies.slice(0, 9).forEach(m => {
+                    movies.slice(0, 8).forEach(m => { // Adjust slice to 8 for a clean 4x2 grid
                         const poster = m.poster ? m.poster : `https://placehold.co/400x600/333/fff?text=${encodeURIComponent(m.title)}`;
                         mGrid.innerHTML += `
-                        <div class="bg-gray-800 rounded-lg overflow-hidden flex flex-col shadow-xl border border-gray-700 h-full">
-                            <div class="h-44 w-full relative flex-shrink-0">
-                                <img src="${poster}" loading="lazy" class="w-full h-full object-cover object-top">
-                                <span class="absolute top-1 right-1 bg-black/80 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">${m.rating}</span>
+                        <div class="bg-gray-800 rounded-lg overflow-hidden flex flex-col shadow-lg border border-gray-700 h-full">
+                            <div class="h-64 w-full relative flex-shrink-0">
+                                <img src="${poster}" loading="lazy" class="w-full h-full object-cover">
+                                <div class="absolute top-1 right-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded font-bold">${m.rating}</div>
                             </div>
                             
-                            <div class="p-2 flex flex-col justify-between flex-grow min-h-0">
+                            <div class="p-2 flex flex-col justify-between flex-grow bg-gray-900/50">
                                 <div class="mb-1">
-                                    <h3 class="font-bold text-base text-white leading-tight line-clamp-1 uppercase">${m.title}</h3>
-                                    <p class="text-[10px] text-red-500 font-extrabold uppercase tracking-tighter">${m.genre}</p>
+                                    <h3 class="font-bold text-sm text-white leading-tight line-clamp-1 uppercase">${m.title}</h3>
+                                    <p class="text-[9px] text-red-500 font-bold uppercase tracking-tighter">${m.genre}</p>
                                 </div>
                                 
-                                <div class="flex flex-wrap gap-1 mt-auto overflow-hidden max-h-12">
-                                    ${m.times.slice(0, 5).map(t => `
-                                        <span class="bg-red-900/80 text-red-100 px-1.5 py-0.5 rounded text-[10px] font-black border border-red-700/50">
+                                <div class="flex flex-wrap gap-1 mt-auto">
+                                    ${m.times.slice(0, 4).map(t => `
+                                        <span class="bg-red-900 text-red-100 px-1 py-0.5 rounded text-[9px] font-black border border-red-700/40">
                                             ${t}
                                         </span>
                                     `).join('')}
