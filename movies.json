@@ -72,6 +72,20 @@
     "poster": "posters/how-to-make-a-killing.jpg"
   },
   {
+    "title": "Scream 7",
+    "rating": "R",
+    "score": "6.4",
+    "runtime": "1h 54m",
+    "genre": "Horror",
+    "times": [
+      "6:15 PM",
+      "6:45 PM",
+      "8:50 PM",
+      "9:25 PM"
+    ],
+    "poster": "posters/scream-7.jpg"
+  },
+  {
     "title": "Iron Lung",
     "rating": "R",
     "score": "6.5",
@@ -129,8 +143,7 @@
     "runtime": "2h 31m",
     "genre": "Action",
     "times": [
-      "3:00 PM",
-      "6:30 PM"
+      "3:00 PM"
     ],
     "poster": "posters/pirates-of-the-caribbean-dead-man-s-chest.jpg"
   }
