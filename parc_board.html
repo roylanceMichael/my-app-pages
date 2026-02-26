@@ -151,9 +151,8 @@
         <!-- SLIDE 4: EVENTS (Was Slide 2) -->
         <div id="slide-4" class="slide-container">
             <div class="h-full flex flex-col gap-4">
-                <div id="events-grid" class="flex-grow grid grid-cols-5 gap-2 content-start overflow-hidden w-full">
-                    <!-- Event Cards Injected via JS -->
-                </div>
+                <div id="events-grid" class="flex-grow grid grid-cols-5 gap-3 content-start overflow-hidden w-full">
+                    </div>
             </div>
         </div>
 
@@ -212,17 +211,14 @@
                         eGrid.innerHTML += `
                         <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg border-t-4 border-pink-500 flex flex-col h-full">
                             ${ev.image ? `
-                                <div class="h-32 w-full relative bg-gray-900 flex-shrink-0">
-                                    <img src="${ev.image}" loading="lazy" class="w-full h-full object-cover">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
+                                <div class="h-60 w-full relative bg-gray-900 flex-shrink-0">
+                                    <img src="${ev.image}" 
+                                         loading="lazy" 
+                                         class="w-full h-full object-cover object-top">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
                                 </div>` : ''}
-                            <div class="p-2 flex flex-col flex-grow bg-gray-900/20">
-                                <h3 class="text-sm font-extrabold text-white mb-0.5 line-clamp-1">${ev.title}</h3>
-                                <p class="text-pink-400 font-bold text-[9px] mb-1 uppercase tracking-widest">${ev.date}</p>
-                                <p class="text-gray-400 text-[11px] leading-tight line-clamp-3">${ev.description}</p>
-                            </div>
-                        </div>`;
-                    });
+                            </div>`;
+                });
                 }
             } catch(e) { console.log(e); }
 
@@ -235,24 +231,15 @@
                     mGrid.innerHTML = '';
                     movies.slice(0, 10).forEach(m => { // Limit to 10 for 5x2
                         const poster = m.poster ? m.poster : `https://placehold.co/400x600/333/fff?text=${encodeURIComponent(m.title)}`;
-                        mGrid.innerHTML += `
+                         mGrid.innerHTML += `
                         <div class="bg-gray-800 rounded-lg overflow-hidden flex flex-col shadow-lg border border-gray-700 h-full">
                             <div class="h-60 w-full relative flex-shrink-0">
-                                <img src="${poster}" loading="lazy" class="w-full h-full object-cover">
+                                <img src="${poster}" 
+                                     loading="lazy" 
+                                     class="w-full h-full object-cover object-top aspect-[2/3]">
                                 <div class="absolute top-1 right-1 bg-black/70 text-white text-[9px] px-1 py-0.5 rounded font-bold">${m.rating}</div>
                             </div>
-                            <div class="p-2 flex flex-col justify-between flex-grow bg-gray-900/40">
-                                <div class="mb-1">
-                                    <h3 class="font-bold text-[13px] text-white leading-tight line-clamp-1 uppercase">${m.title}</h3>
-                                    <p class="text-[9px] text-red-500 font-bold uppercase tracking-tighter">${m.genre}</p>
-                                </div>
-                                <div class="flex flex-wrap gap-1 mt-auto">
-                                    ${m.times.slice(0, 3).map(t => `
-                                        <span class="bg-red-900/80 text-red-100 px-1 py-0.5 rounded text-[9px] font-black border border-red-700/30">${t}</span>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        </div>`;
+                            </div>`;
                     });
                 }
             } catch(e) { 
