@@ -51,7 +51,7 @@ def scrape_calendar():
 
     count = 0
     for card in event_cards:
-        if count >= 9: 
+        if count >= 10: 
             break
 
         # 1. EXTRACT TITLE
